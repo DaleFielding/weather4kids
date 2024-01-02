@@ -76,5 +76,26 @@ The purpose of this project is to create a website that assists young children w
 
   This decision was made as these would extend beyond the necessary requirements for the project and may take more time than appropriate. They will be considered for future implementations.
 
+#### Structure 
 
+The site will be designed largely as a single page layout, with the majority of the features within the homepage. The only exception to this will likely be the 404 page.<br> I have listed the pages below including the features they will contain. Not all features will be displayed on initial page load, instead the main content will be replaced when necessary to dynamically change the layout/content using JavaScript and/or covered by a model.
+
+* Homepage:
+  * Logo and site name, clicking on these will reload the home page.
+  * Location search bar.
+  * A heading that lets the user know the city they are in, current temperature and feels like temperature.
+  * Current weather information will be displayed for current location; morning, afternoon, evening and night. These will be clickable, and will dynamically change the html in the page with:
+    - Snippets of information for learning about the current weather, the user will be able to discover further information by clicking a button.
+    - A button to play audio that is relevant to the current weather/snippet.
+    - Interactive and educational questions about the current weather. This will provide feedback when an answer has been given, letting the user know whether they were correct and showing the correct answer if not. 
+  * Social media links.
+  * Contact/feedback form, when clicked the main content will be replaced with:
+    * A form that allows the user to enter their name, email and any feedback or questions. To then press submit and be notified if successful.
+  * Interactive elements will be made obvious and easy to use, and when html has dynamically changed to other content there will be a button to indicate how to get back to the home page.
+  * Semantic HTML will be used throughout.
+
+* 404 page:
+  * Will be consistent in that it shares the same design as the home page, including the logo and the footer, however it will not include the general content from the home page. 
+  * A message to the user that they have tried to visit a page in the domain that does not exist.
+  * There will be an obvious link/button within the page content that will direct the user to the home page.
 
