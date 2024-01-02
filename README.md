@@ -14,7 +14,7 @@ The purpose of this project is to create a website that assists young children w
 6. As as user, I would like to provide feedback to the site owner/developer, and for this to be acknowledged
 
 ### Site Objectives
-1. To assist young children (ages 4-8) with learning about the weather 
+1. To assist young children (ages 4-7) with learning about the weather 
 2. To be responsive and functional
 3. To meet all accessibility requirements, allowing anyone to use the site regardless of their abilities/needs
 4. To display reasonably accurate data relating to the weather
