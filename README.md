@@ -20,7 +20,7 @@ The purpose of this project is to create a website that assists young children w
 4. To display reasonably accurate data relating to the weather
 
 ### Design
-- #### Strategy
+#### Strategy
   Taking into account the intended website, I have:
   - Spoken with a primary school teacher to obtain their opinion on requirements for this age group. They have suggested that children of this age will respond well to; bright/vibrant visuals and interactive elements. Also Information should be concise and the site easy to use.<br>
 
@@ -43,7 +43,7 @@ The purpose of this project is to create a website that assists young children w
     
   The strategy is to create a website that meets all of the expectations from the user stories, site objectives and takes into account findings from the research conducted. 
 
-- #### Scope
+#### Scope
   I have listed the possible features below and ranked 1-5 in level of importance/relevance to user needs (1 being most important and viable/feasible):
   | Possible Feature | Rank |
   |---|---|
