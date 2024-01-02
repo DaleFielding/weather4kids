@@ -44,28 +44,37 @@ The purpose of this project is to create a website that assists young children w
   The strategy is to create a website that meets all of the expectations from the user stories, site objectives and takes into account findings from the research conducted. 
 
 - #### Scope
-I have listed the possible features below and ranked 1-5 in level of importance/relevance to user needs (1 being most important and viable/feasible):
-| Possible Feature | Rank |
-|---|---|
-| Current weather displayed for today from current location | 1 |
-| Weather icons/images | 1 |
-| Snippets of information | 1 |
-| 404 page | 1 |
-| Site navigation | 1 |
-| Accessibility | 1 |
-| Device/resolution responsivity | 1 |
-| Responses to user action | 1 |
-| Interactive elements | 1 |
-| Interactive questions | 1 |
-| Contact us/feedback form | 1 |
-| Ability to search for other locations | 1 |
-| Current weather broken down into;<br>&nbsp morning, afternoon, evening and night | 2 |
-| Audio - weather sounds  | 2 |
-| Logo | 3 |
-| Social links | 3 |
-| Video footage | 4 |
-| Animations | 4 |
-| Quiz | 5 |
-| Weather tips | 5 |
+  I have listed the possible features below and ranked 1-5 in level of importance/relevance to user needs (1 being most important and viable/feasible):
+  | Possible Feature | Rank |
+  |---|---|
+  | Current weather displayed for today from current location | 1 |
+  | Weather icons/images | 1 |
+  | Snippets of information | 1 |
+  | 404 page | 1 |
+  | Site navigation | 1 |
+  | Accessibility | 1 |
+  | Device/resolution responsivity | 1 |
+  | Responses to user action | 1 |
+  | Interactive elements | 1 |
+  | Interactive questions | 1 |
+  | Contact us/feedback form | 1 |
+  | Ability to search for other locations | 1 |
+  | Current weather broken down into;<br>&nbsp morning, afternoon, evening and night | 2 |
+  | Audio - weather sounds  | 2 |
+  | Logo | 3 |
+  | Social links | 3 |
+  | Video footage | 4 |
+  | Animations | 4 |
+  | Quiz | 5 |
+  | Weather tips | 5 |
+
+  Following review of scope, I had decided not to include:
+  - Video footage 
+  - Animations 
+  - Quiz
+  - Weather tips
+
+  This decision was made as these would extend beyond the necessary requirements for the project and may take more time than appropriate. They will be considered for future implementations.
+
 
 
