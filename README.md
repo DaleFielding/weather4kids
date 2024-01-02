@@ -59,7 +59,7 @@ The purpose of this project is to create a website that assists young children w
   | Interactive questions | 1 |
   | Contact us/feedback form | 1 |
   | Ability to search for other locations | 1 |
-  | Current weather broken down into;<br>&nbsp morning, afternoon, evening and night | 2 |
+  | Current weather broken down into;<br> &nbsp; morning, afternoon, evening and night | 2 |
   | Audio - weather sounds  | 2 |
   | Logo | 3 |
   | Social links | 3 |
