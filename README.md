@@ -20,7 +20,7 @@ The purpose of this project is to create a website that assists young children w
 4. To display reasonably accurate data relating to the weather
 
 ### Design
-- #### __Strategy__
+- #### Strategy
   Taking into account the intended website, I have:
   - Spoken with a primary school teacher to obtain their opinion on requirements for this age group. They have suggested that children of this age will respond well to; bright/vibrant visuals and interactive elements. Also Information should be concise and the site easy to use.<br>
 
@@ -42,5 +42,30 @@ The purpose of this project is to create a website that assists young children w
   In summary, I believe there is an opportunity to make this website really stand out from the others in terms of the target market.<br>It seems that the majority of other sites tend to be very informative but not overly eye-catching or engaging. I also feel that younger children may be overwhelmed with the vast amount of information displayed. <br>
     
   The strategy is to create a website that meets all of the expectations from the user stories, site objectives and takes into account findings from the research conducted. 
+
+- #### Scope
+I have listed the possible features below and ranked 1-5 in level of importance/relevance to user needs (1 being most important and viable/feasible):
+| Possible Feature | Rank |
+|---|---|
+| Current weather displayed for today from current location | 1 |
+| Weather icons/images | 1 |
+| Snippets of information | 1 |
+| 404 page | 1 |
+| Site navigation | 1 |
+| Accessibility | 1 |
+| Device/resolution responsivity | 1 |
+| Responses to user action | 1 |
+| Interactive elements | 1 |
+| Interactive questions | 1 |
+| Contact us/feedback form | 1 |
+| Ability to search for other locations | 1 |
+| Current weather broken down into;<br>&nbsp morning, afternoon, evening and night | 2 |
+| Audio - weather sounds  | 2 |
+| Logo | 3 |
+| Social links | 3 |
+| Video footage | 4 |
+| Animations | 4 |
+| Quiz | 5 |
+| Weather tips | 5 |
 
 
