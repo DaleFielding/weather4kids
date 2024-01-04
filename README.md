@@ -6,18 +6,18 @@ The purpose of this project is to create a website that assists young children w
 ## User Experience (UX)
 
 ### User Stories 
-1. As as user, I would like to view the current weather forecast for today in my location and in other cities
-2. As as user, I would like to see imagery relating to the type of weather
-3. As as user, I would like to interact with elements in the site by either clicking with a mouse or by using a keyboard
-4. As as user, I would like to learn about weather through snippets of information
-5. As as user, I would like to test my knowledge through quiz questions and get feedback on the answer(s)
-6. As as user, I would like to provide feedback to the site owner/developer, and for this to be acknowledged
+1. As as user, I would like to view the current weather forecast for today in my location and in other cities.
+2. As as user, I would like to view the details of the current weather. Such as precipitation, wind etc.
+3. As as user, I would like to see imagery relating to the type of weather.
+4. As as user, I would like to interact with elements in the site by either clicking with a mouse or by using a keyboard.
+5. As as user, I would like to learn about weather through snippets of information.
+6. As as user, I would like to provide feedback to the site owner/developer, and for this to be acknowledged.
 
 ### Site Objectives
-1. To assist young children (ages 4-7) with learning about the weather 
-2. To be responsive and functional
-3. To meet all accessibility requirements, allowing anyone to use the site regardless of their abilities/needs
-4. To display reasonably accurate data relating to the weather
+1. To assist young children (ages 4-7) with learning about the weather.
+2. To be responsive and functional.
+3. To meet all accessibility requirements, allowing anyone to use the site regardless of their abilities/needs.
+4. To display reasonably accurate data relating to the weather.
 
 ### Design
 #### Strategy
@@ -56,7 +56,6 @@ The purpose of this project is to create a website that assists young children w
   | Device/resolution responsivity | 1 |
   | Responses to user action | 1 |
   | Interactive elements | 1 |
-  | Interactive questions | 1 |
   | Contact us/feedback form | 1 |
   | Ability to search for other locations | 1 |
   | Current weather broken down into;<br> &nbsp; morning, afternoon, evening and night | 2 |
@@ -87,7 +86,7 @@ The site will be designed largely as a single page layout, with the majority of 
   * Current weather information will be displayed for current location; morning, afternoon, evening and night. These will be clickable, and will dynamically change the html in the page with:
     - Snippets of information for learning about the current weather, the user will be able to discover further information by clicking a button.
     - A button to play audio that is relevant to the current weather/snippet.
-    - Interactive and educational questions about the current weather. This will provide feedback when an answer has been given, letting the user know whether they were correct and showing the correct answer if not. 
+    - Details relating to current weather such as; precipitation, wind etc.
   * Social media links.
   * Contact/feedback form, when clicked the main content will be replaced with:
     * A form that allows the user to enter their name, email and any feedback or questions. To then press submit and be notified if successful.
@@ -99,3 +98,4 @@ The site will be designed largely as a single page layout, with the majority of 
   * A message to the user that they have tried to visit a page in the domain that does not exist.
   * There will be an obvious link/button within the page content that will direct the user to the home page.
 
+#### Skeleton
