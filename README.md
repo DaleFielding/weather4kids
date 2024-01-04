@@ -98,10 +98,10 @@ The site will be designed largely as a single page layout, with the majority of 
   * A message to the user that they have tried to visit a page in the domain that does not exist.
   * There will be an obvious link/button within the page content that will direct the user to the home page.
 
-### Structure
+### Skeleton
 #### Wireframes
-<br>
-- Mobile View:
+
+##### Mobile View:
   <details><summary>Homepage</summary>
     <img src="docs/wireframes/mobile-view-homepage.png">
   </details>
@@ -111,11 +111,14 @@ The site will be designed largely as a single page layout, with the majority of 
   <details><summary>Homepage - after search bar has been selected and typed into</summary>
     <img src="docs/wireframes/mobile-view-homepage-after-search-icon-clicked.png">
   </details>
+  <details><summary>Homepage - after feedback link has been clicked</summary>
+    <img src="docs/wireframes/mobile-view-homepage-after-feedback-link-clicked.png">
+  </details>
   <details><summary>404 page</summary>
     <img src="docs/wireframes/mobile-view-404.png">
   </details>
-<br>
-- Tablet View:
+
+##### Tablet View:
   <details><summary>Homepage</summary>
     <img src="docs/wireframes/tablet-view-homepage.png">
   </details>
@@ -125,11 +128,14 @@ The site will be designed largely as a single page layout, with the majority of 
   <details><summary>Homepage - after search bar has been selected and typed into</summary>
     <img src="docs/wireframes/tablet-view-homepage-after-search-icon-clicked.png">
   </details>
+  <details><summary>Homepage - after feedback link has been clicked</summary>
+    <img src="docs/wireframes/tablet-view-homepage-after-feedback-link-clicked.png">
+  </details>
   <details><summary>404 page</summary>
     <img src="docs/wireframes/tablet-view-404.png">
   </details>
-<br>
-- Desktop view:
+
+##### Desktop view:
   <details><summary>Homepage</summary>
     <img src="docs/wireframes/desktop-view-homepage.png">
   </details>
@@ -138,6 +144,9 @@ The site will be designed largely as a single page layout, with the majority of 
   </details>
   <details><summary>Homepage - after search bar has been typed into</summary>
     <img src="docs/wireframes/desktop-view-homepage-after-searchbar-clicked-and-typed.png">
+  </details>
+  <details><summary>Homepage - after feedback link has been clicked</summary>
+    <img src="docs/wireframes/desktop-view-homepage-after-feedback-link-clicked.png">
   </details>
   <details><summary>404 page</summary>
     <img src="docs/wireframes/desktop-view-404.png">
