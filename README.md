@@ -19,8 +19,8 @@ The purpose of this project is to create a website that assists young children w
 3. To meet all accessibility requirements, allowing anyone to use the site regardless of their abilities/needs.
 4. To display reasonably accurate data relating to the weather.
 
-### Design
-#### Strategy
+## Design
+### Strategy
   Taking into account the intended website, I have:
   - Spoken with a primary school teacher to obtain their opinion on requirements for this age group. They have suggested that children of this age will respond well to; bright/vibrant visuals and interactive elements. Also Information should be concise and the site easy to use.<br>
 
@@ -43,7 +43,7 @@ The purpose of this project is to create a website that assists young children w
     
   The strategy is to create a website that meets all of the expectations from the user stories, site objectives and takes into account findings from the research conducted. 
 
-#### Scope
+### Scope
   I have listed the possible features below and ranked 1-5 in level of importance/relevance to user needs (1 being most important and viable/feasible):
   | Possible Feature | Rank |
   |---|---|
@@ -75,7 +75,7 @@ The purpose of this project is to create a website that assists young children w
 
   This decision was made as these would extend beyond the necessary requirements for the project and may take more time than appropriate. They will be considered for future implementations.
 
-#### Structure 
+### Structure 
 
 The site will be designed largely as a single page layout, with the majority of the features within the homepage. The only exception to this will likely be the 404 page.<br> I have listed the pages below including the features they will contain. Not all features will be displayed on initial page load, instead the main content will be replaced when necessary to dynamically change the layout/content using JavaScript and/or covered by a model.
 
@@ -98,4 +98,3 @@ The site will be designed largely as a single page layout, with the majority of 
   * A message to the user that they have tried to visit a page in the domain that does not exist.
   * There will be an obvious link/button within the page content that will direct the user to the home page.
 
-#### Skeleton
