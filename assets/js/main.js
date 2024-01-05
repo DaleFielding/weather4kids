@@ -1,15 +1,14 @@
 // const fetch = require('node-fetch'); // commented out as this stops it working in browser console.
 const baseUrl = "http://api.weatherapi.com/v1";
 const apiKey = "211d38f5813f4f90bfa70515240501";
-let locationName = "Bristol"; // fixed location temporarily, will be adding dynamic variables later on.
+let locationName = "Bath";
 
-let url = `${baseUrl}/forecast.json?key=${apiKey}&q=${locationName}&days=1&current.json?key=${apiKey}&q=${locationName}`;
-
-/* Fetch the data, throw an error if there's an issue with the response,
-   catch the error and display it in the console.
-   Console log data if the fetch is successful.
+/* Fetch the weather data, throw an error if there's an issue with the response, catch the error and display it in the console.
+Console log data if the fetch is successful.
 */
 function getWeatherData() {
+  let url = `${baseUrl}/forecast.json?key=${apiKey}&q=${locationName}&days=1&current.json?key=${apiKey}&q=${locationName}`;
+
   fetch(url)
     .then((response) => {
       if (!response.ok) {
@@ -50,13 +49,29 @@ function getWeatherData() {
       console.error("Error:", error);
     });
 }
-getWeatherData();
 
-
+/* Get the user location coordinates, then fetch to reverse geocode in order to obtain the city/area from data.location.name and update the locationName variable. 
+Catch any errors if unable to get location.
+*/
 function getLocation() {
   const successCallback = (position) => {
-    console.log(position);
+    const {
+      latitude,
+      longitude
+    } = position.coords;
+
+    fetch(`http://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${latitude},${longitude}`)
+      .then((response) => response.json())
+      .then((data) => {
+        locationName = data.location.name;
+        console.log(locationName)
+        getWeatherData(locationName);
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+      });
   }
+
   const errorCallback = (error) => {
     console.log(error);
   }
