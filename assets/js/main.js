@@ -24,7 +24,7 @@ function getWeatherData() {
         location,
         forecast
       } = data
-      // Destruct data needed from the current object 
+      // Destruct data needed from the current + location object. Will be considering a better way to obtain this information.
       let {
         condition: weatherType,
         feelslike_c: feelsLike,
@@ -34,7 +34,7 @@ function getWeatherData() {
         humidity,
         uv,
       } = current;
-      // Destruct data needed from the location object 
+
       let {
         lat,
         lon,
@@ -50,5 +50,16 @@ function getWeatherData() {
       console.error("Error:", error);
     });
 }
-
 getWeatherData();
+
+
+function getLocation() {
+  const successCallback = (position) => {
+    console.log(position);
+  }
+  const errorCallback = (error) => {
+    console.log(error);
+  }
+  navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
+}
+getLocation();
