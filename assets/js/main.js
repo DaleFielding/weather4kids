@@ -3,7 +3,7 @@ const baseUrl = "http://api.weatherapi.com/v1";
 const apiKey = "211d38f5813f4f90bfa70515240501";
 let locationName = "Bristol"; // fixed location temporarily, will be adding dynamic variables later on.
 
-let url = `${baseUrl}/current.json?key=${apiKey}&q=${locationName}`;
+let url = `${baseUrl}/forecast.json?key=${apiKey}&q=${locationName}&days=1&current.json?key=${apiKey}&q=${locationName}`;
 
 /* Fetch the data, throw an error if there's an issue with the response,
    catch the error and display it in the console.
@@ -22,6 +22,7 @@ function getWeatherData() {
       let {
         current,
         location,
+        forecast
       } = data
       // Destruct data needed from the current object 
       let {
