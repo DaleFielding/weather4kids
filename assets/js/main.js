@@ -10,16 +10,25 @@ let url = `${baseUrl}/current.json?key=${apiKey}&q=${locationName}`;
    catch the error and display it in the console.
    Console log data if the fetch is successful.
 */
-fetch(url)
-  .then((response) => {
-    if (!response.ok) {
-      throw new Error(`HTTP error! Status: ${response.status}`);
-    }
-    return response.json();
-  })
-  .then((data) => {
-    console.log(data);
-  })
-  .catch((error) => {
-    console.error("Error:", error);
-  });
+function getWeatherData() {
+  fetch(url)
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+      return response.json();
+    })
+    .then((data) => {
+      // Destruct the data object
+      let {
+        current,
+        location
+      } = data
+      // Destruct data needed from the current object 
+    })
+    .catch((error) => {
+      console.error("Error:", error);
+    });
+}
+
+getWeatherData();
