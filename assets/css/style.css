@@ -2,17 +2,12 @@
 *::after,
 *::before {
   box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+
 }
 
+/* Header elements */
 header {
   max-width: 940px;
-}
-
-.header-fluid {
-  padding: 0;
-  margin: 0;
 }
 
 .logo {
@@ -21,5 +16,13 @@ header {
 }
 
 .site-name {
+  text-align: center;
+}
+
+/*  */
+
+/* Main elements */
+.intro-message {
+  max-width: 940px;
   text-align: center;
 }
