@@ -22,28 +22,36 @@ function getWeatherData() {
         current,
         location,
         forecast
-      } = data
-      // Destruct data needed from the current + location object. Will be considering a better way to obtain this information.
-      let {
-        condition: weatherType,
-        feelslike_c: feelsLike,
-        precip_mm: precip,
-        temp_c: temp,
-        wind_mph: wind,
-        humidity,
-        uv,
-      } = current;
+      } = data;
 
-      let {
-        lat,
-        lon,
-        country,
-        name,
-        tz_id: timezone,
-        localtime,
-      } = location;
+      // Extract data using a loop
+      let currentData = {};
+      for (let key in current) {
+        currentData[key] = current[key];
+      }
 
-      console.log(data);
+      let locationData = {};
+      for (let key in location) {
+        locationData[key] = location[key];
+      }
+
+      // Access the values as needed
+      let weatherType = currentData.condition;
+      let feelsLike = currentData.feelslike_c;
+      let precip = currentData.precip_mm;
+      let temp = currentData.temp_c;
+      let wind = currentData.wind_mph;
+      let humidity = currentData.humidity;
+      let uv = currentData.uv;
+
+      let lat = locationData.lat;
+      let lon = locationData.lon;
+      let country = locationData.country;
+      let name = locationData.name;
+      let timezone = locationData.tz_id;
+      let localtime = locationData.localtime;
+
+      // console.log(data);
     })
     .catch((error) => {
       console.error("Error:", error);
@@ -64,7 +72,7 @@ function getLocation() {
       .then((response) => response.json())
       .then((data) => {
         locationName = data.location.name;
-        console.log(locationName)
+        // console.log(locationName)
         getWeatherData(locationName);
       })
       .catch((error) => {
