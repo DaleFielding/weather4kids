@@ -26,3 +26,15 @@ header {
   max-width: 940px;
   padding: 5px;
 }
+
+.weather-icon-container {
+  max-width: 940px;
+}
+
+.weather-icons {
+  width: 250px;
+  height: auto;
+  background-color: #fafafa;
+  border: solid 1px black;
+  margin: 12px;
+}
