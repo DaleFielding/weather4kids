@@ -15,30 +15,39 @@
 </head>
 
 <body>
-  <header>
-    <!-- Logo -->
-    <img src="assets/images/logo.png" alt="site logo - rainbow with a smiley cloud">
-    <!-- /Logo -->
-    <!---->
-    <!-- Site Name -->
-    <h1>Weather 4 Kids</h1>
-    <!-- /Site Name -->
-    <!---->
-    <!-- Searchbar -->
-    <div class="search-container">
-      <label for="search"></label>
-      <input type="search" id="search" placeholder="Search Location">
-      <div class="search-icon">
-        <i class="fa-solid fa-magnifying-glass"></i>
+  <header class="container-fluid">
+    <div class="row ">
+      <!-- Logo -->
+      <div class="col-sm-4">
+        <img class="logo" src="assets/images/logo.png" alt="site logo - rainbow with a smiley cloud">
       </div>
+      <!-- /Logo -->
+      <!---->
+      <!-- Site Name -->
+      <div class="col-sm-4">
+        <h1>Weather 4 Kids</h1>
+      </div>
+      <!-- /Site Name -->
+      <!---->
+      <!-- Searchbar -->
+      <div class="col-sm-4 search-container">
+        <label class="d-none d-md-inline-block" for="search"></label>
+        <div class="input-group">
+          <input class="d-none d-md-inline-block" type="search" id="search" placeholder="Search Location">
+          <span class="search-icon input-group-text">
+            <i class="fa-solid fa-magnifying-glass" style="font-size: 40px;"></i>
+          </span>
+        </div>
+      </div>
+      <!-- /Searchbar -->
+      <!---->
     </div>
-    <!-- /Searchbar -->
-    <!---->
   </header>
   <main>
     <!-- Intro Message -->
-    <h2 class="intro-message">
-      "Hi there! Please enable your location access, that way we can show you the weather around you. Or, you can tell
+    <h2 class=" intro-message">
+      "Hi there! Please enable your location access, that way we can show you the weather around you. Or, you
+      can tell
       us a city or area you're curious about!"</h2>
     <!-- Intro Message -->
     <!---->
