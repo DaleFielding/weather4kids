@@ -54,8 +54,6 @@
     <!-- /Intro Message -->
     <!---->
     <!-- Weather Icons -->
-    <!-- <section class="weather-card-container row">
-      <div class="container text-center"> -->
     <section class="weather-card-container row align-items-center">
       <div class="d-none d-sm-block col-sm-3">
         <div class="right-weather-card weather-cards">
@@ -73,26 +71,30 @@
         </div>
       </div>
     </section>
-    <!-- </div>
-    </section> -->
     <!-- /Weather Icons -->
     <!---->
-    <section class="buttons-and-click-message-container">
+
+    <section class="buttons-and-click-message-container row">
       <!-- Earlier Today Button -->
-      <div>Earlier Today<br><i class="fa-solid fa-arrow-left"></i></div>
+      <div class="col col-md-3">
+        <div>Earlier Today<br><i class="fa-solid fa-arrow-left"></i></div>
+      </div>
       <!-- /Earlier Today Button -->
-      <!---->
       <!-- Click To Learn Icon -->
-      <div>
-        <img src="assets/images/click-to-learn-arrow.png" alt="click-to-learn-arrow">
-        <h4>Click To Learn</h4>
+      <div class="col col-md-6">
+        <div class="learn-arrow-container m-auto">
+          <img class="learn-arrow-img" src="assets/images/click-to-learn-arrow.png" alt="click-to-learn-arrow">
+        </div>
+        <h4 class="rotate-30deg">Click To Learn</h4>
       </div>
       <!-- /Click To Learn Icon-->
-      <!---->
       <!-- Later Today Button -->
-      <div>Later Today<br><i class="fa-solid fa-arrow-right"></i></div>
+      <div class="col col-md-3">
+        <div>Later Today<br><i class="fa-solid fa-arrow-right"></i></div>
+      </div>
       <!-- /Later Today Button -->
     </section>
+    <!-- Earlier Today Button -->
   </main>
   <footer>
     <section class="footer-links-container">

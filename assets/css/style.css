@@ -1,3 +1,5 @@
+/* Setup */
+
 *,
 *::after,
 *::before {
@@ -19,8 +21,6 @@ header {
   text-align: center;
 }
 
-/*  */
-
 /* Main elements */
 .intro-message {
   max-width: 940px;
@@ -40,4 +40,23 @@ header {
 
 .weather-icon {
   max-width: 100%;
+}
+
+.learn-arrow-container {
+  max-width: 100px;
+  padding-right: 50px;
+
+}
+
+.learn-arrow-img {
+  max-width: 100%;
+
+}
+
+.rotate-30deg {
+  transform: rotate(-30deg);
+}
+
+.buttons-and-click-message-container {
+  padding-top: 10px;
 }
