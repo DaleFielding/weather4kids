@@ -4,10 +4,12 @@
 *::after,
 *::before {
   box-sizing: border-box;
-
+  margin: 0;
+  padding: 0;
 }
 
-/* Header elements */
+/* --- Header elements --- */
+
 header {
   max-width: 940px;
 }
@@ -21,15 +23,18 @@ header {
   text-align: center;
 }
 
-/* Main elements */
+/* --- Main elements --- */
+
+.container-fluid {
+  max-width: 940px;
+}
+
 .intro-message {
   max-width: 940px;
   padding: 5px;
 }
 
-.container-fluid {
-  max-width: 940px;
-}
+/* Weather-cards */
 
 .weather-cards {
   border: solid 5px #afd3df;
@@ -41,6 +46,25 @@ header {
 .weather-icon {
   max-width: 100%;
 }
+
+/* Today buttons-and-click-message-container */
+
+.buttons-and-click-message-container {
+  padding-top: 10px;
+}
+
+.today-buttons {
+  text-align: center;
+  border: solid 1px #afd3df;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.today-buttons i {
+  font-size: 32px;
+}
+
+/* Click to learn arrow/message */
 
 .learn-arrow-container {
   max-width: 100px;
@@ -55,19 +79,4 @@ header {
 
 .rotate-30deg {
   transform: rotate(-30deg);
-}
-
-.buttons-and-click-message-container {
-  padding-top: 10px;
-}
-
-.today-buttons {
-  text-align: center;
-  border: solid 1px black;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.today-buttons i {
-  font-size: 32px;
 }
