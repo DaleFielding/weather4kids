@@ -27,14 +27,17 @@ header {
   padding: 5px;
 }
 
-.weather-icon-container {
+.container-fluid {
   max-width: 940px;
 }
 
-.weather-icons {
-  width: 250px;
-  height: auto;
-  background-color: #fafafa;
-  border: solid 1px black;
-  margin: 12px;
+.weather-cards {
+  border: solid 1px #6b6b6b;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  text-align: center;
+}
+
+.weather-icon {
+  max-width: 100%;
 }
