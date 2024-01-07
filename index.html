@@ -42,8 +42,8 @@
     </div>
   </header>
 
-  <!-- Intro Message -->
   <main class="container-fluid text-center">
+    <!-- Intro Message -->
     <div class="row justify-content-center align-items-center">
       <h2 class="intro-message col-12 text-center">
         Hi there! Please allow location access so that we can tell you the current weather. Or search
@@ -92,34 +92,37 @@
     </section>
   </main>
 
-  <footer>
-    <section class="footer-links-container">
+  <footer class="container-fluid">
+    <section class="footer-links-container row">
       <!-- Feedback Form -->
-      <h5 class="feedback-link">
-        Feedback/Contact Us
-      </h5>
+      <div class="feedback-link-container col-4 col-md-3 d-flex justify-content-center align-items-center">
+        <h6 class="feedback-link text-center">
+          Contact / Feedback
+        </h6>
+      </div>
       <!-- /Feedback Form-->
+      <!-- Intentional blank column - for intended spacing -->
+      <div class="col-4 col-md-6">
+      </div>
+      <!-- Intentional blank column - for intended spacing -->
       <!-- Social Media Links -->
-      <div>
-        <ul>
-          <li>
+      <div class="social-container col-4 col-md-3">
+        <ul class="list-inline d-flex justify-content-evenly align-items-center">
+          <li class="social list-inline-item">
             <a href="https://www.facebook.com/" target="_blank">
-              <i class="fa fa-facebook" aria-hidden="true">
-              </i>
+              <i class="fa fa-facebook" aria-hidden="true"></i>
               <span class="sr-only">Facebook</span>
             </a>
           </li>
-          <li>
+          <li class="social list-inline-item">
             <a href="https://twitter.com/" target="_blank">
-              <i class="fa fa-twitter" aria-hidden="true">
-              </i>
+              <i class="fa fa-twitter" aria-hidden="true"></i>
               <span class="sr-only">Twitter</span>
             </a>
           </li>
-          <li>
+          <li class="social list-inline-item">
             <a href="https://www.instagram.com/" target="_blank">
-              <i class="fa fa-instagram" aria-hidden="true">
-              </i>
+              <i class="fa fa-instagram" aria-hidden="true"></i>
               <span class="sr-only">Instagram</span>
             </a>
           </li>
