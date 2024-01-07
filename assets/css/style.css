@@ -23,6 +23,11 @@ header {
   text-align: center;
 }
 
+.intro-message {
+  margin-top: 3vh;
+  margin-bottom: 3vh;
+}
+
 /* ----- MAIN ----- */
 
 .container-fluid {
