@@ -141,6 +141,7 @@ footer {
 
 .cross-icon-container {
   padding: 12px 12px 0 12px;
+  text-align: end;
 }
 
 /* Audio message  */
@@ -192,7 +193,6 @@ footer {
   border: solid 1px #afd3df;
   border-radius: 5px;
   cursor: pointer;
-}
 
 .go-back-btn i {
   font-size: 32px;
