@@ -144,6 +144,22 @@ footer {
   text-align: end;
 }
 
+/* Weather details  */
+
+.weather-details-container {
+  margin: 0;
+  min-height: 150px;
+  padding-left: 6px;
+  border: solid 2px #afd3df;
+  text-align: start;
+  
+}
+
+.weather-details-container ul {
+  list-style-type: none;
+  padding-left: 8px;
+}
+
 /* Audio message  */
 
 .audio-message-container {
