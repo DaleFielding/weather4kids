@@ -54,16 +54,28 @@
       </a>
     </section>
     <!-- /Exit icon -->
-    <section class="weather-and-audio-icons row align-items-center">
+    <section class="weather-and-audio-icons row  align-items-center">
+      <!-- Weather details -->
+      <div class="d-none d-md-block col-md-3">
+        <div class="row">
+          <ul class="">
+            <li>Wind =</li>
+            <li>Precipitation =</li>
+            <li>Feels like =</li>
+            <li>Humidity =</li>
+          </ul>
+        </div>
+      </div>
+      <!-- /Weather details -->
       <!-- Weather Icon -->
-      <div class="col-4">
+      <div class="col-4 col-md-6">
         <div class="clicked-weather-card weather-cards">
           <img class="weather-icon" src="assets/images/weather-icons/rainy.png" alt="cloudy but sunny icon">
         </div>
       </div>
       <!-- /Weather Icon -->
       <!-- Audio + message -->
-      <div class="col-8 align-items-center">
+      <div class="col-8 col-md-3 align-items-center">
         <div class="audio-message-container row d-flex align-items-center justify-content-center">
           <i class="fa-solid fa-volume-high col-12 align-self-end"></i>
           <p class="col-12">Click icon above to hear sounds of when it is (weather type)</p>
