@@ -3,8 +3,11 @@ const baseUrl = "http://api.weatherapi.com/v1";
 const apiKey = "211d38f5813f4f90bfa70515240501";
 let locationName = "Bath";
 
-/* Fetch the weather data, throw an error if there's an issue with the response, catch the error and display it in the console.
-Console log data if the fetch is successful.
+/* getWeatherData() function:
+- Fetch the weather data
+- destructure data into variables if fetch succesfull
+- throw an error if there's an issue with the response 
+- catch the error and display it in the console
 */
 function getWeatherData() {
   let url = `${baseUrl}/forecast.json?key=${apiKey}&q=${locationName}&days=1&current.json?key=${apiKey}&q=${locationName}`;
@@ -17,41 +20,38 @@ function getWeatherData() {
       return response.json();
     })
     .then((data) => {
-      // Destruct the data object
       let {
         current,
         location,
         forecast
       } = data;
 
-      // Extract data using a loop
-      let currentData = {};
-      for (let key in current) {
-        currentData[key] = current[key];
-      }
+      console.log(current, location, forecast);
 
-      let locationData = {};
-      for (let key in location) {
-        locationData[key] = location[key];
-      }
+      let {
+        condition: weatherType,
+        feelslike_c: feelsLike,
+        precip_mm: precip,
+        temp_c: temp,
+        wind_mph: wind,
+        humidity,
+        uv,
+      } = current;
 
-      // Access the values as needed
-      let weatherType = currentData.condition;
-      let feelsLike = currentData.feelslike_c;
-      let precip = currentData.precip_mm;
-      let temp = currentData.temp_c;
-      let wind = currentData.wind_mph;
-      let humidity = currentData.humidity;
-      let uv = currentData.uv;
+      let {
+        lat: latitude,
+        lon: longitude,
+        country,
+        name,
+        tz_id: timezone,
+        localtime,
+      } = location;
 
-      let lat = locationData.lat;
-      let lon = locationData.lon;
-      let country = locationData.country;
-      let name = locationData.name;
-      let timezone = locationData.tz_id;
-      let localtime = locationData.localtime;
+      let {forecastday} = forecast;
+      let {hour, day}= forecastday[0];
 
-      // console.log(data);
+      console.log ("Hour", hour)
+      console.log("Day", day)
     })
     .catch((error) => {
       console.error("Error:", error);
