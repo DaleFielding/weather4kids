@@ -50,18 +50,34 @@ function getWeatherData() {
       const hourlyWeatherArray = hour.map(entry => ({
         timeHourly: entry.time_epoch,
         tempHourly: entry.temp_c,
-        feelsLikeHourly: entry.feelslike_c, 
+        feelsLikeHourly: entry.feelslike_c,
         precipHourly: entry.precip_in,
         humidityHourly: entry.humidity,
         windHourly: entry.wind_mph
       }));
       
-      console.log("All Data:", data);
-      console.log ("Hour:", hour)
+      /* Seperating hourlyWeatherArray into seperate arrays for the different periods of the day. 
+      The index of hourlyWeatherArray runs from 0-23 which represents each hour of the day; 0 = 1am, 1 = 2am etc.
+      I have purposely left out indexes 0-4 as before morning will not be included within the site. */ 
+      const morning = hourlyWeatherArray.slice(5, 12);
+      const afternoon = hourlyWeatherArray.slice(12, 18);
+      const evening = hourlyWeatherArray.slice(18, 22);
+      const night = hourlyWeatherArray.slice(21, 25);
+      
+      const periodsOfTheDay = {
+        morning,
+        afternoon,
+        evening,
+        night
+      };
+    
+      // console.log("All Data:", data);
+      // console.log ("Hour:", hour)
+      // console.log("Day:", day)
       console.log("Map Hourly:", hourlyWeatherArray);
-      console.log("Day:", day)
+      console.log("Periods Of The Day:", periodsOfTheDay);
     })
-
+    
     .catch((error) => {
       console.error("Error:", error);
     });
