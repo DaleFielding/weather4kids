@@ -26,8 +26,6 @@ function getWeatherData() {
         forecast
       } = data;
 
-      console.log(current, location, forecast);
-
       let {
         condition: weatherType,
         feelslike_c: feelsLike,
@@ -47,12 +45,23 @@ function getWeatherData() {
         localtime,
       } = location;
 
-      let {forecastday} = forecast;
-      let {hour, day}= forecastday[0];
+      let {hour, day}= forecast.forecastday[0];
 
-      console.log ("Hour", hour)
-      console.log("Day", day)
+      const hourlyWeatherArray = hour.map(entry => ({
+        timeHourly: entry.time_epoch,
+        tempHourly: entry.temp_c,
+        feelsLikeHourly: entry.feelslike_c, 
+        precipHourly: entry.precip_in,
+        humidityHourly: entry.humidity,
+        windHourly: entry.wind_mph
+      }));
+      
+      console.log("All Data:", data);
+      console.log ("Hour:", hour)
+      console.log("Map Hourly:", hourlyWeatherArray);
+      console.log("Day:", day)
     })
+
     .catch((error) => {
       console.error("Error:", error);
     });
