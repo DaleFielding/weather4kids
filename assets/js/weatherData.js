@@ -1,7 +1,9 @@
+import { calculateAverages } from './math.js';
+
 // const fetch = require('node-fetch'); // commented out as this stops it working in browser console.
 const baseUrl = "http://api.weatherapi.com/v1";
 const apiKey = "211d38f5813f4f90bfa70515240501";
-let locationName = "Bath";
+let locationName = "Bath"; 
 
 /* getWeatherData() function:
 - Fetch the weather data
@@ -56,7 +58,7 @@ function getWeatherData() {
         windHourly: entry.wind_mph
       }));
       
-      /* Seperating hourlyWeatherArray into seperate arrays for the different periods of the day. 
+      /* Slice hourlyWeatherArray into separate arrays for the different periods of the day. 
       The index of hourlyWeatherArray runs from 0-23 which represents each hour of the day; 0 = 1am, 1 = 2am etc.
       I have purposely left out indexes 0-4 as before morning will not be included within the site. */ 
       const morning = hourlyWeatherArray.slice(5, 12);
@@ -70,19 +72,28 @@ function getWeatherData() {
         evening,
         night
       };
-    
+
+      // Pass periods of the day to the calculate averages function and store the return value into variables
+      const morningAverages = calculateAverages(periodsOfTheDay.morning);
+      const afternoonAverages = calculateAverages(periodsOfTheDay.afternoon);
+      const eveningAverages = calculateAverages(periodsOfTheDay.evening);
+      const nightAverages = calculateAverages(periodsOfTheDay.night);
+
       // console.log("All Data:", data);
-      // console.log ("Hour:", hour)
-      // console.log("Day:", day)
-      console.log("Map Hourly:", hourlyWeatherArray);
-      console.log("Periods Of The Day:", periodsOfTheDay);
+      // console.log ("Hour:", hour);
+      // console.log("Day:", day);
+      // console.log("Map Hourly:", hourlyWeatherArray);
+      // console.log("Periods Of The Day:", periodsOfTheDay);
+      console.log("Morning Averages:", morningAverages);
+      console.log("Afternoon Averages:", afternoonAverages);
+      console.log("Evening Averages:", eveningAverages);
+      console.log("Night Averages:", nightAverages);
+      
     })
-    
     .catch((error) => {
       console.error("Error:", error);
     });
 }
-
 /* Get the user location coordinates, then fetch to reverse geocode in order to obtain the city/area from data.location.name and update the locationName variable. 
 Catch any errors if unable to get location.
 */
