@@ -1,3 +1,13 @@
+
+/** 
+convertSecondsToHourly function:
+Converts seconds to hourly, displayed as an integer
+ **/
+export function convertSecondsToHourly(seconds) {
+  const hours = Math.floor(seconds / 3600) % 24;
+  return hours;
+}
+
 /** 
 calculateAverages function:
 1) Accesses each key in the array 
@@ -7,7 +17,7 @@ calculateAverages function:
 **/
 export function calculateAverages(array) {
   let arrayAveraged = {};
-  
+
   if (array.length > 0) {
     let keys = Object.keys(array[0]);
 
@@ -19,4 +29,5 @@ export function calculateAverages(array) {
 
   return arrayAveraged;
 }
+
 

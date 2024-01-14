@@ -1,4 +1,4 @@
-import { calculateAverages } from './math.js';
+import { convertSecondsToHourly, calculateAverages } from './math.js';
 
 // const fetch = require('node-fetch'); // commented out as this stops it working in browser console.
 const baseUrl = "http://api.weatherapi.com/v1";
@@ -50,7 +50,7 @@ function getWeatherData() {
       let {hour, day}= forecast.forecastday[0];
 
       const hourlyWeatherArray = hour.map(entry => ({
-        timeHourly: entry.time_epoch,
+        timeHourly: convertSecondsToHourly(entry.time_epoch),
         tempHourly: entry.temp_c,
         feelsLikeHourly: entry.feelslike_c,
         precipHourly: entry.precip_in,
@@ -82,7 +82,7 @@ function getWeatherData() {
       // console.log("All Data:", data);
       // console.log ("Hour:", hour);
       // console.log("Day:", day);
-      // console.log("Map Hourly:", hourlyWeatherArray);
+      console.log("Map Hourly:", hourlyWeatherArray);
       // console.log("Periods Of The Day:", periodsOfTheDay);
       console.log("Morning Averages:", morningAverages);
       console.log("Afternoon Averages:", afternoonAverages);
