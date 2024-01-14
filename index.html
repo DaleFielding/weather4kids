@@ -64,7 +64,7 @@
       </div>
     </header>
 
-    <main class="container-fluid text-center">
+    <main class="container-fluid text-center" data-main-content>
       <!-- Intro Message -->
       <div class="row justify-content-center align-items-center">
         <h2 class="intro-message col-12 col-sm-9 text-center">
@@ -78,18 +78,18 @@
         <div class="d-none d-sm-block col-sm-3">
           <div class="left-weather-card weather-cards">
             <img class="weather-icon"
-            src="assets/images/weather-icons/cloudy.png" alt="cloudy but sunny
-            icon" style=>
+            src="assets/images/weather-icons/cloudy.png" alt="left weather icon"
+            style=>
             <p>Morning</p>
           </div>
         </div>
         <div class="col-12 col-sm-6">
           <div class="current-weather-card weather-cards">
-            <a href="second-view.html">
+            <!-- <a href="second-view.html"> -->
               <img
                 class="weather-icon"
                 src="assets/images/weather-icons/rainy.png"
-                alt="cloudy but sunny icon"
+                alt="middle weather icon"
               />
             </a>
             <p>Afternoon</p>
@@ -98,8 +98,8 @@
         <div class="d-none d-sm-block col-sm-3">
           <div class="right-weather-card weather-cards">
             <img class="weather-icon"
-            src="assets/images/weather-icons/sunny.png" alt="cloudy but sunny
-            icon" style=>
+            src="assets/images/weather-icons/sunny.png" alt="right weather icon"
+            style=>
             <p>Evening</p>
           </div>
         </div>
@@ -189,5 +189,6 @@
       crossorigin="anonymous"
     ></script>
     <script src="assets/js/weatherData.js" type="module"></script>
+    <script src="assets/js/secondView.js" type="module"></script>
   </body>
 </html>
