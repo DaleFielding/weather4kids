@@ -30,7 +30,6 @@ header {
   
 }
 
-
 .intro-message {
   margin-top: 3vh;
   margin-bottom: 3vh;
@@ -50,7 +49,7 @@ header {
 /* Weather-cards */
 
 .weather-cards {
-  border: solid 5px #afd3df;
+  border: solid 6px #afd3df;
   border-radius: 20px;
   box-shadow: 0 4px 8px 0 #afd3df, 0 6px 20px 0 #afd3df;
   text-align: center;
@@ -68,7 +67,8 @@ header {
 
 .today-buttons {
   text-align: center;
-  border: solid 1px #afd3df;
+  border: solid 3px #afd3df;
+  box-shadow: 0 2px 4px 0 #afd3df, 0 3px 10px 0 #afd3df;
   border-radius: 5px;
   cursor: pointer;
 }
@@ -109,7 +109,7 @@ footer {
 
 .feedback-link-container h6 {
   margin: 0;
-  border: solid 1px rgba(27, 137, 180, 0.5);
+  border: solid 3px rgba(27, 137, 180, 0.5);
   border-radius: 10px;
   color: rgba(27, 137, 180);
   padding: 0.2rem 0.6rem;
