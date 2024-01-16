@@ -24,6 +24,13 @@ header {
   text-align: center;
 }
 
+.search-container input {
+  font-size: 14px;
+  text-align: center;
+  
+}
+
+
 .intro-message {
   margin-top: 3vh;
   margin-bottom: 3vh;
