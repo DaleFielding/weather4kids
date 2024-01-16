@@ -8,6 +8,9 @@
   padding: 0;
 }
 
+body {
+  font-family: Sniglet, Calibri, sans-serif
+}
 
 /* ----- HEADER ELEMENTS ----- */
 
@@ -22,17 +25,20 @@ header {
 
 .site-name {
   text-align: center;
+
 }
 
 .search-container input {
   font-size: 14px;
   text-align: center;
+  font-family: 'Cabin', Calibri, sans-serif;
   
 }
 
 .intro-message {
   margin-top: 3vh;
   margin-bottom: 3vh;
+  font-family: 'Cabin', Calibri, sans-serif;
 }
 
 /* ----- MAIN ----- */
@@ -71,6 +77,7 @@ header {
   box-shadow: 0 2px 4px 0 #afd3df, 0 3px 10px 0 #afd3df;
   border-radius: 5px;
   cursor: pointer;
+  font-family: 'Cabin', Calibri, sans-serif;
 }
 
 .today-buttons i {
@@ -100,6 +107,7 @@ footer {
   margin-top: 5vh;
   border-top: solid 3px #c0e9f7;
   background-color: #c0e9f7; 
+  font-family: 'Cabin', Calibri, sans-serif;
 
 }
 
