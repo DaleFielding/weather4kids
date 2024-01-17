@@ -94,9 +94,35 @@ function getWeatherData() {
       console.error("Error:", error);
     });
 }
-/* Get the user location coordinates, then fetch to reverse geocode in order to obtain the city/area from data.location.name and update the locationName variable. 
-Catch any errors if unable to get location.
-*/
+
+  /**
+  setIntroMsg:
+  - Pass the found location as a parameter, which indicates location access has been allowed.
+  - Update html for the intro message and include the found location in the message.
+  **/
+  function setIntroMsg (foundLocation) {
+    let mainIntro = document.querySelector('[data-main-intro]');
+    mainIntro.innerHTML = `
+    <main class="container-fluid text-center">
+    <!-- Intro Message -->
+    <div class="row justify-content-center align-items-center">
+      <h2 class="intro-message col-12 col-sm-9 text-center data-main-intro">
+        You are in ${foundLocation}, the temperature is currently (insertTemperatureDynamically)!
+      </h2>
+    </div>
+    <!-- /Intro Message -->
+    `;
+  };
+     
+
+/**  
+getLocation:
+- Get the user location coordinates
+- Fetch to reverse geocode in order to obtain the city/area from data.location.name 
+- Update the locationName variable. 
+- Call the setIntroMsg function passing in the found location as a parameter
+- Catch any errors if unable to get location.
+**/
 function getLocation() {
   const successCallback = (position) => {
     const {
@@ -110,6 +136,7 @@ function getLocation() {
         locationName = data.location.name;
         // console.log(locationName)
         getWeatherData(locationName);
+        setIntroMsg(locationName)
       })
       .catch((error) => {
         console.error("Error:", error);
