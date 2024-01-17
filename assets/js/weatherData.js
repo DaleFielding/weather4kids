@@ -64,7 +64,7 @@ function getWeatherData() {
       const morning = hourlyWeatherArray.slice(5, 12);
       const afternoon = hourlyWeatherArray.slice(12, 18);
       const evening = hourlyWeatherArray.slice(18, 22);
-      const night = hourlyWeatherArray.slice(21, 25);
+      const night = hourlyWeatherArray.slice(21, 23);
       
       const periodsOfTheDay = {
         morning,
