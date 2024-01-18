@@ -79,24 +79,32 @@ function getWeatherData() {
       let eveningAverages = calculateAverages(periodsOfTheDay.evening);
       let nightAverages = calculateAverages(periodsOfTheDay.night);
 
-      // Determine current time then calculate current time period of the day based on this.
+      /*
+      - Determine current time, calculate current time period of the day based on this, then create a new object containing info from the appropriate object (morningAverages etc; see above)
+      */
       let currentPeriod;
+      let currentPeriodAverages;
       let currentHour = new Date(localTime).getHours();
       if (currentHour >= 5 && currentHour < 12) {
         currentPeriod = 'Morning';
+        currentPeriodAverages = morningAverages;
       } else if (currentHour >= 12 && currentHour < 18) {
         currentPeriod = 'Afternoon';
+        currentPeriodAverages = afternoonAverages;
       } else if (currentHour >= 18 && currentHour < 21) {
         currentPeriod = 'Evening';
+        currentPeriodAverages = eveningAverages;
       } else if (currentHour >= 21 && currentHour < 24) {
         currentPeriod = 'Night';
+        currentPeriodAverages = nightAverages;
       }
-      console.log("Current Period", currentPeriod);
-      // console.log("All Data:", data);
-      // console.log ("Hour:", hour);
-      // console.log("Day:", day);
-      // console.log("Map Hourly:", hourlyWeatherArray);
-      // console.log("Periods Of The Day:", periodsOfTheDay);
+      // console.log("Current Period", currentPeriod);
+      // console.log("Current Period Averages", currentPeriodAverages);
+      // // console.log("All Data:", data);
+      // // console.log ("Hour:", hour);
+      // // console.log("Day:", day);
+      // // console.log("Map Hourly:", hourlyWeatherArray);
+      // // console.log("Periods Of The Day:", periodsOfTheDay);
       // console.log("Morning Averages:", morningAverages);
       // console.log("Afternoon Averages:", afternoonAverages);
       // console.log("Evening Averages:", eveningAverages);
