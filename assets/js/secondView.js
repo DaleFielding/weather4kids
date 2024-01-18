@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function () {
     mainContent.innerHTML = newContent;
   };
   weatherCards.forEach(function (card) {
-    console.log(card);
+    // console.log(card);
     card.addEventListener("click", function () {
       let clickedCard = card.querySelector('.weather-icon').alt;
       let secondView = `

@@ -44,7 +44,7 @@ function getWeatherData() {
         country,
         name,
         tz_id: timezone,
-        localtime,
+        localtime: localTime,
       } = location;
 
       let {hour, day}= forecast.forecastday[0];
@@ -61,10 +61,10 @@ function getWeatherData() {
       /* Slice hourlyWeatherArray into separate arrays for the different periods of the day. 
       The index of hourlyWeatherArray runs from 0-23 which represents each hour of the day; 0 = 1am, 1 = 2am etc.
       I have purposely left out indexes 0-4 as before morning will not be included within the site. */ 
-      const morning = hourlyWeatherArray.slice(5, 12);
-      const afternoon = hourlyWeatherArray.slice(12, 18);
-      const evening = hourlyWeatherArray.slice(18, 22);
-      const night = hourlyWeatherArray.slice(21, 23);
+      const morning = hourlyWeatherArray.slice(5, 11);
+      const afternoon = hourlyWeatherArray.slice(12, 17);
+      const evening = hourlyWeatherArray.slice(18, 21);
+      const night = hourlyWeatherArray.slice(22, 23);
       
       const periodsOfTheDay = {
         morning,
@@ -74,27 +74,40 @@ function getWeatherData() {
       };
 
       // Pass periods of the day to the calculate averages function and store the return value into variables
-      const morningAverages = calculateAverages(periodsOfTheDay.morning);
-      const afternoonAverages = calculateAverages(periodsOfTheDay.afternoon);
-      const eveningAverages = calculateAverages(periodsOfTheDay.evening);
-      const nightAverages = calculateAverages(periodsOfTheDay.night);
+      let morningAverages = calculateAverages(periodsOfTheDay.morning);
+      let afternoonAverages = calculateAverages(periodsOfTheDay.afternoon);
+      let eveningAverages = calculateAverages(periodsOfTheDay.evening);
+      let nightAverages = calculateAverages(periodsOfTheDay.night);
 
+      // Determine current time then calculate current time period of the day based on this.
+      let currentPeriod;
+      let currentHour = new Date(localTime).getHours();
+      if (currentHour >= 5 && currentHour < 12) {
+        currentPeriod = 'Morning';
+      } else if (currentHour >= 12 && currentHour < 18) {
+        currentPeriod = 'Afternoon';
+      } else if (currentHour >= 18 && currentHour < 21) {
+        currentPeriod = 'Evening';
+      } else if (currentHour >= 21 && currentHour < 24) {
+        currentPeriod = 'Night';
+      }
+      console.log("Current Period", currentPeriod);
       // console.log("All Data:", data);
       // console.log ("Hour:", hour);
       // console.log("Day:", day);
-      console.log("Map Hourly:", hourlyWeatherArray);
+      // console.log("Map Hourly:", hourlyWeatherArray);
       // console.log("Periods Of The Day:", periodsOfTheDay);
-      console.log("Morning Averages:", morningAverages);
-      console.log("Afternoon Averages:", afternoonAverages);
-      console.log("Evening Averages:", eveningAverages);
-      console.log("Night Averages:", nightAverages);
+      // console.log("Morning Averages:", morningAverages);
+      // console.log("Afternoon Averages:", afternoonAverages);
+      // console.log("Evening Averages:", eveningAverages);
+      // console.log("Night Averages:", nightAverages);
       
     })
     .catch((error) => {
       console.error("Error:", error);
     });
 }
-
+  
   /**
   setIntroMsg:
   - Pass the found location as a parameter, which indicates location access has been allowed.
@@ -102,6 +115,7 @@ function getWeatherData() {
   **/
   function setIntroMsg (foundLocation) {
     let mainIntro = document.querySelector('[data-main-intro]');
+    // let currentTemp = morningAverages.tempHourly;
     mainIntro.innerHTML = `
     <main class="container-fluid text-center">
     <!-- Intro Message -->
@@ -114,7 +128,6 @@ function getWeatherData() {
     `;
   };
      
-
 /**  
 getLocation:
 - Get the user location coordinates
@@ -123,29 +136,29 @@ getLocation:
 - Call the setIntroMsg function passing in the found location as a parameter
 - Catch any errors if unable to get location.
 **/
-function getLocation() {
-  const successCallback = (position) => {
-    const {
-      latitude,
-      longitude
-    } = position.coords;
+  function getLocation() {
+    const successCallback = (position) => {
+      const {
+        latitude,
+        longitude
+      } = position.coords;
 
-    fetch(`http://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${latitude},${longitude}`)
-      .then((response) => response.json())
-      .then((data) => {
-        locationName = data.location.name;
-        // console.log(locationName)
-        getWeatherData(locationName);
-        setIntroMsg(locationName)
-      })
-      .catch((error) => {
-        console.error("Error:", error);
-      });
-  }
+      fetch(`http://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${latitude},${longitude}`)
+        .then((response) => response.json())
+        .then((data) => {
+          locationName = data.location.name;
+          // console.log(locationName)
+          getWeatherData(locationName);
+          setIntroMsg(locationName)
+        })
+        .catch((error) => {
+          console.error("Error:", error);
+        });
+    }
 
-  const errorCallback = (error) => {
-    console.log(error);
+    const errorCallback = (error) => {
+      console.log(error);
+    }
+    navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
   }
-  navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
-}
-getLocation();
+  getLocation();
