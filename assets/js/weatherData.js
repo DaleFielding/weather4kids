@@ -79,25 +79,9 @@ function getWeatherData() {
       let eveningAverages = calculateAverages(periodsOfTheDay.evening);
       let nightAverages = calculateAverages(periodsOfTheDay.night);
 
-      /*
-      - Determine current time, calculate current time period of the day based on this, then create a new object containing info from the appropriate object (morningAverages etc; see above)
-      */
-      let currentPeriod;
-      let currentPeriodAverages;
-      let currentHour = new Date(localTime).getHours();
-      if (currentHour >= 5 && currentHour < 12) {
-        currentPeriod = 'Morning';
-        currentPeriodAverages = morningAverages;
-      } else if (currentHour >= 12 && currentHour < 18) {
-        currentPeriod = 'Afternoon';
-        currentPeriodAverages = afternoonAverages;
-      } else if (currentHour >= 18 && currentHour < 21) {
-        currentPeriod = 'Evening';
-        currentPeriodAverages = eveningAverages;
-      } else if (currentHour >= 21 && currentHour < 24) {
-        currentPeriod = 'Night';
-        currentPeriodAverages = nightAverages;
-      }
+      
+      let { currentPeriodAverages } = calculateCurrentPeriod(localTime, morningAverages, afternoonAverages, eveningAverages, nightAverages);
+      setIntroMsg(locationName, currentPeriodAverages);
       // console.log("Current Period", currentPeriod);
       // console.log("Current Period Averages", currentPeriodAverages);
       // // console.log("All Data:", data);
@@ -115,26 +99,53 @@ function getWeatherData() {
       console.error("Error:", error);
     });
 }
-  
+
+/** 
+- Determine current time based on the location, 
+- Calculate current time period of the day based on this 
+- Then create a new object containing info from the appropriate object (morningAverages etc; see above)
+- return the object to be accessed outside of the function.
+**/
+function calculateCurrentPeriod(localTime, morningAverages, afternoonAverages, eveningAverages, nightAverages) {
+  let currentPeriod;
+  let currentPeriodAverages;
+
+  let currentHour = new Date(localTime).getHours();
+  if (currentHour >= 5 && currentHour < 12) {
+    currentPeriod = 'Morning';
+    currentPeriodAverages = morningAverages;
+  } else if (currentHour >= 12 && currentHour < 18) {
+    currentPeriod = 'Afternoon';
+    currentPeriodAverages = afternoonAverages;
+  } else if (currentHour >= 18 && currentHour < 21) {
+    currentPeriod = 'Evening';
+    currentPeriodAverages = eveningAverages;
+  } else if (currentHour >= 21 && currentHour < 24) {
+    currentPeriod = 'Night';
+    currentPeriodAverages = nightAverages;
+  }
+  return { currentPeriodAverages };
+}
+
   /**
   setIntroMsg:
-  - Pass the found location as a parameter, which indicates location access has been allowed.
-  - Update html for the intro message and include the found location in the message.
+  - Pass the found location as a parameter, which indicates location access has been allowed. 
+  - Pass the currentPeriodAverages object as the second parameter, allowing access to the weather data.
+  - Update html for the intro message and display the desired data passed from the parameters.
   **/
-  function setIntroMsg (foundLocation) {
-    let mainIntro = document.querySelector('[data-main-intro]');
-    // let currentTemp = morningAverages.tempHourly;
-    mainIntro.innerHTML = `
-    <main class="container-fluid text-center">
-    <!-- Intro Message -->
-    <div class="row justify-content-center align-items-center">
-      <h2 class="intro-message col-12 col-sm-9 text-center data-main-intro">
-        You are in ${foundLocation}, the temperature is currently (insertTemperatureDynamically)!
-      </h2>
-    </div>
-    <!-- /Intro Message -->
-    `;
-  };
+function setIntroMsg (foundLocation, currentPeriodAverages) {
+  let mainIntro = document.querySelector('[data-main-intro]');
+  mainIntro.innerHTML = `
+  <main class="container-fluid text-center">
+  <!-- Intro Message -->
+  <div class="row justify-content-center align-items-center">
+    <h2 class="intro-message col-12 col-sm-9 text-center data-main-intro">
+      Hi there! You are in ${foundLocation}, the temperature is currently ${currentPeriodAverages.tempHourly}&degC.
+    </h2>
+  </div>
+  <!-- /Intro Message -->
+  `;
+};
      
 /**  
 getLocation:
@@ -144,29 +155,28 @@ getLocation:
 - Call the setIntroMsg function passing in the found location as a parameter
 - Catch any errors if unable to get location.
 **/
-  function getLocation() {
-    const successCallback = (position) => {
-      const {
-        latitude,
-        longitude
-      } = position.coords;
+function getLocation() {
+  const successCallback = (position) => {
+    const {
+      latitude,
+      longitude
+    } = position.coords;
 
-      fetch(`http://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${latitude},${longitude}`)
-        .then((response) => response.json())
-        .then((data) => {
-          locationName = data.location.name;
-          // console.log(locationName)
-          getWeatherData(locationName);
-          setIntroMsg(locationName)
-        })
-        .catch((error) => {
-          console.error("Error:", error);
-        });
-    }
-
-    const errorCallback = (error) => {
-      console.log(error);
-    }
-    navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
+    fetch(`http://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${latitude},${longitude}`)
+      .then((response) => response.json())
+      .then((data) => {
+        locationName = data.location.name;
+        // console.log(locationName)
+        getWeatherData(locationName);
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+      });
   }
-  getLocation();
+
+  const errorCallback = (error) => {
+    console.log(error);
+  }
+  navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
+}
+getLocation();
