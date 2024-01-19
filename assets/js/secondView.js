@@ -1,4 +1,16 @@
+import { currentPeriodAveragesGlobal } from './weatherData.js';
 
+function setWeatherDetails (currentPeriodAveragesGlobal) {
+  let weatherDetails = document.querySelector('[data-weather-details]');
+  weatherDetails.innerHTML = `
+  <ul>
+    <li>Wind = ${currentPeriodAveragesGlobal.windHourly}</li>
+    <li>Precipitation = ${currentPeriodAveragesGlobal.precipHourly}</li>
+    <li>Feels like = ${currentPeriodAveragesGlobal.feelsLikeHourly}</li>
+    <li>Humidity = ${currentPeriodAveragesGlobal.humidityHourly}</li>
+  </ul> 
+  `;
+};
 /*
 This event listener:
 1) Waits for DOM content to fully load before accessing the class and data attribute that are needed and storing them as variables
@@ -11,11 +23,11 @@ This event listener:
 document.addEventListener("DOMContentLoaded", function () {
   let weatherCards = document.querySelectorAll('.weather-cards');
   let mainContent = document.querySelector('[data-main-content]');
+
   function changeContent (newContent) {
     mainContent.innerHTML = newContent;
   };
   weatherCards.forEach(function (card) {
-    // console.log(card);
     card.addEventListener("click", function () {
       let clickedCard = card.querySelector('.weather-icon').alt;
       let secondView = `
@@ -43,7 +55,7 @@ document.addEventListener("DOMContentLoaded", function () {
       <section class="weather-and-audio-icons row align-items-center">
         <!-- Weather details -->
         <div class="d-none d-md-block col-md-3">
-          <div class="weather-details-container d-flex align-items-center">
+          <div class="weather-details-container d-flex align-items-center" data-weather-details>
             <ul>
               <li>Wind =</li>
               <li>Precipitation =</li>
@@ -109,6 +121,7 @@ document.addEventListener("DOMContentLoaded", function () {
     </main>
       `;
       changeContent(secondView);
+      setWeatherDetails(currentPeriodAveragesGlobal);
     });
   });
 });
