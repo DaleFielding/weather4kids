@@ -5,6 +5,9 @@ const baseUrl = "http://api.weatherapi.com/v1";
 const apiKey = "211d38f5813f4f90bfa70515240501";
 let locationName = "Bath"; 
 
+// Export the below variable (which will be an object containing data) so that the its value can be accessed from other files without having to call getWeatherData again.
+export let currentPeriodAveragesGlobal;
+
 /* getWeatherData() function:
 - Fetch the weather data
 - destructure data into variables if fetch succesfull
@@ -82,6 +85,7 @@ function getWeatherData() {
       
       let { currentPeriodAverages } = calculateCurrentPeriod(localTime, morningAverages, afternoonAverages, eveningAverages, nightAverages);
       setIntroMsg(locationName, currentPeriodAverages);
+      return (currentPeriodAveragesGlobal = currentPeriodAverages);
       // console.log("Current Period", currentPeriod);
       // console.log("Current Period Averages", currentPeriodAverages);
       // // console.log("All Data:", data);
@@ -146,7 +150,7 @@ function setIntroMsg (foundLocation, currentPeriodAverages) {
   <!-- /Intro Message -->
   `;
 };
-     
+
 /**  
 getLocation:
 - Get the user location coordinates
