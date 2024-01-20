@@ -1,9 +1,9 @@
-import { convertSecondsToHourly, calculateAverages } from './math.js';
+import { convertSecondsToHourly, calculateAverages } from "./math.js";
 
 // const fetch = require('node-fetch'); // commented out as this stops it working in browser console.
 const baseUrl = "http://api.weatherapi.com/v1";
 const apiKey = "211d38f5813f4f90bfa70515240501";
-let locationName = "Bath"; 
+let locationName = "Bath";
 
 // Export the below variable (which will be an object containing data) so that the its value can be accessed from other files without having to call getWeatherData again.
 export let currentPeriodAveragesGlobal;
@@ -25,11 +25,7 @@ function getWeatherData() {
       return response.json();
     })
     .then((data) => {
-      let {
-        current,
-        location,
-        forecast
-      } = data;
+      let { current, location, forecast } = data;
 
       let {
         condition: weatherType,
@@ -50,9 +46,9 @@ function getWeatherData() {
         localtime: localTime,
       } = location;
 
-      let {hour, day}= forecast.forecastday[0];
+      let { hour, day } = forecast.forecastday[0];
 
-      const hourlyWeatherArray = hour.map(entry => ({
+      const hourlyWeatherArray = hour.map((entry) => ({
         timeHourly: convertSecondsToHourly(entry.time_epoch),
         tempHourly: entry.temp_c,
         feelsLikeHourly: entry.feelslike_c,
@@ -60,23 +56,23 @@ function getWeatherData() {
         humidityHourly: entry.humidity,
         windHourly: entry.wind_mph,
         condition: entry.condition,
-        weatherCode: entry.condition.code
+        weatherCode: entry.condition.code,
       }));
-      console.log(hourlyWeatherArray[0].weatherCode)
-      
+      // console.log(hourlyWeatherArray[0].weatherCode)
+
       /* Slice hourlyWeatherArray into separate arrays for the different periods of the day. 
-      The index of hourlyWeatherArray runs from 0-23 which represents each hour of the day; 0 = 1am, 1 = 2am etc.
-      I have purposely left out indexes 0-4 as before morning will not be included within the site. */ 
+      The index of hourlyWeatherArray runs from 0-24 which represents each hour of the day; 0 = 1am, 1 = 2am etc.
+      I have purposely left out indexes 0-4 as before morning will not be included within the site. */
       const morning = hourlyWeatherArray.slice(5, 11);
       const afternoon = hourlyWeatherArray.slice(12, 17);
       const evening = hourlyWeatherArray.slice(18, 21);
-      const night = hourlyWeatherArray.slice(22, 23);
-      
+      const night = hourlyWeatherArray.slice(22, 24);
+
       const periodsOfTheDay = {
         morning,
         afternoon,
         evening,
-        night
+        night,
       };
 
       // Pass periods of the day to the calculate averages function and store the return value into variables
@@ -85,17 +81,23 @@ function getWeatherData() {
       let eveningAverages = calculateAverages(periodsOfTheDay.evening);
       let nightAverages = calculateAverages(periodsOfTheDay.night);
 
-      
-      let { currentPeriodAverages } = calculateCurrentPeriod(localTime, morningAverages, afternoonAverages, eveningAverages, nightAverages);
+      let { currentPeriodAverages } = calculateCurrentPeriod(
+        localTime,
+        morningAverages,
+        afternoonAverages,
+        eveningAverages,
+        nightAverages
+      );
       setIntroMsg(locationName, currentPeriodAverages);
-       // console.log("Current Period", currentPeriod);
+      // console.log("Current Period", currentPeriod);
       // console.log("Current Period Averages", currentPeriodAverages);
       // console.log("All Data:", data);
       // console.log ("Hour:", hour);
       // console.log("Day:", day);
-      console.log("Map Hourly:", hourlyWeatherArray);
+      // console.log("periods of the day:", periodsOfTheDay);
+      // console.log("Map Hourly:", hourlyWeatherArray);
       // console.log("Periods Of The Day:", periodsOfTheDay);
-      console.log("Morning Averages:", morningAverages);
+      // console.log("Morning Averages:", morningAverages);
       // console.log("Afternoon Averages:", afternoonAverages);
       // console.log("Evening Averages:", eveningAverages);
       // console.log("Night Averages:", nightAverages);
@@ -113,35 +115,41 @@ function getWeatherData() {
 - Then create a new object containing info from the appropriate object (morningAverages etc; see above)
 - return the object to be accessed outside of the function.
 **/
-function calculateCurrentPeriod(localTime, morningAverages, afternoonAverages, eveningAverages, nightAverages) {
+function calculateCurrentPeriod(
+  localTime,
+  morningAverages,
+  afternoonAverages,
+  eveningAverages,
+  nightAverages
+) {
   let currentPeriod;
   let currentPeriodAverages;
 
   let currentHour = new Date(localTime).getHours();
   if (currentHour >= 5 && currentHour < 12) {
-    currentPeriod = 'Morning';
+    currentPeriod = "Morning";
     currentPeriodAverages = morningAverages;
   } else if (currentHour >= 12 && currentHour < 18) {
-    currentPeriod = 'Afternoon';
+    currentPeriod = "Afternoon";
     currentPeriodAverages = afternoonAverages;
   } else if (currentHour >= 18 && currentHour < 21) {
-    currentPeriod = 'Evening';
+    currentPeriod = "Evening";
     currentPeriodAverages = eveningAverages;
   } else if (currentHour >= 21 && currentHour < 24) {
-    currentPeriod = 'Night';
+    currentPeriod = "Night";
     currentPeriodAverages = nightAverages;
   }
   return { currentPeriodAverages };
 }
 
-  /**
+/**
   setIntroMsg:
   - Pass the found location as a parameter, which indicates location access has been allowed. 
   - Pass the currentPeriodAverages object as the second parameter, allowing access to the weather data.
   - Update html for the intro message and display the desired data passed from the parameters.
   **/
-function setIntroMsg (foundLocation, currentPeriodAverages) {
-  let mainIntro = document.querySelector('[data-main-intro]');
+function setIntroMsg(foundLocation, currentPeriodAverages) {
+  let mainIntro = document.querySelector("[data-main-intro]");
   mainIntro.innerHTML = `
   <main class="container-fluid text-center">
   <!-- Intro Message -->
@@ -152,7 +160,7 @@ function setIntroMsg (foundLocation, currentPeriodAverages) {
   </div>
   <!-- /Intro Message -->
   `;
-};
+}
 
 /**  
 getLocation:
@@ -164,12 +172,11 @@ getLocation:
 **/
 function getLocation() {
   const successCallback = (position) => {
-    const {
-      latitude,
-      longitude
-    } = position.coords;
+    const { latitude, longitude } = position.coords;
 
-    fetch(`http://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${latitude},${longitude}`)
+    fetch(
+      `http://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${latitude},${longitude}`
+    )
       .then((response) => response.json())
       .then((data) => {
         locationName = data.location.name;
@@ -179,11 +186,11 @@ function getLocation() {
       .catch((error) => {
         console.error("Error:", error);
       });
-  }
+  };
 
   const errorCallback = (error) => {
     console.log(error);
-  }
+  };
   navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
 }
 getLocation();
