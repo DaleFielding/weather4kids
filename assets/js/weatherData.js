@@ -58,8 +58,11 @@ function getWeatherData() {
         feelsLikeHourly: entry.feelslike_c,
         precipHourly: entry.precip_in,
         humidityHourly: entry.humidity,
-        windHourly: entry.wind_mph
+        windHourly: entry.wind_mph,
+        condition: entry.condition,
+        weatherCode: entry.condition.code
       }));
+      console.log(hourlyWeatherArray[0].weatherCode)
       
       /* Slice hourlyWeatherArray into separate arrays for the different periods of the day. 
       The index of hourlyWeatherArray runs from 0-23 which represents each hour of the day; 0 = 1am, 1 = 2am etc.
@@ -85,19 +88,19 @@ function getWeatherData() {
       
       let { currentPeriodAverages } = calculateCurrentPeriod(localTime, morningAverages, afternoonAverages, eveningAverages, nightAverages);
       setIntroMsg(locationName, currentPeriodAverages);
-      return (currentPeriodAveragesGlobal = currentPeriodAverages);
-      // console.log("Current Period", currentPeriod);
+       // console.log("Current Period", currentPeriod);
       // console.log("Current Period Averages", currentPeriodAverages);
-      // // console.log("All Data:", data);
-      // // console.log ("Hour:", hour);
-      // // console.log("Day:", day);
-      // // console.log("Map Hourly:", hourlyWeatherArray);
-      // // console.log("Periods Of The Day:", periodsOfTheDay);
-      // console.log("Morning Averages:", morningAverages);
+      // console.log("All Data:", data);
+      // console.log ("Hour:", hour);
+      // console.log("Day:", day);
+      console.log("Map Hourly:", hourlyWeatherArray);
+      // console.log("Periods Of The Day:", periodsOfTheDay);
+      console.log("Morning Averages:", morningAverages);
       // console.log("Afternoon Averages:", afternoonAverages);
       // console.log("Evening Averages:", eveningAverages);
       // console.log("Night Averages:", nightAverages);
-      
+
+      return (currentPeriodAveragesGlobal = currentPeriodAverages);
     })
     .catch((error) => {
       console.error("Error:", error);
