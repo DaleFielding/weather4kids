@@ -11,6 +11,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (currentCard && nextCard) {
       currentCard.classList.add("d-none");
       nextCard.classList.remove("d-none");
+      earlierButton.classList.remove("d-none");
 
       if (!nextCard.nextElementSibling) {
         laterButton.classList.add("d-none");
@@ -27,6 +28,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (currentCard && prevCard) {
       currentCard.classList.add("d-none");
       prevCard.classList.remove("d-none");
+      laterButton.classList.remove("d-none");
 
       if (!prevCard.previousElementSibling) {
         earlierButton.classList.add("d-none");
@@ -34,5 +36,3 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
-
-// Need to make it so that the today buttons reappear after clicking the other way.
