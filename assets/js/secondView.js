@@ -1,7 +1,7 @@
-import { currentPeriodAveragesGlobal } from './weatherData.js';
+import { currentPeriodAveragesGlobal } from "./weatherData.js";
 
-function setWeatherDetails (currentPeriodAveragesGlobal) {
-  let weatherDetails = document.querySelector('[data-weather-details]');
+function setWeatherDetails(currentPeriodAveragesGlobal) {
+  let weatherDetails = document.querySelector("[data-weather-details]");
   weatherDetails.innerHTML = `
   <ul>
     <li>Wind = ${currentPeriodAveragesGlobal.windHourly}</li>
@@ -10,7 +10,7 @@ function setWeatherDetails (currentPeriodAveragesGlobal) {
     <li>Humidity = ${currentPeriodAveragesGlobal.humidityHourly}</li>
   </ul> 
   `;
-};
+}
 /*
 This event listener:
 1) Waits for DOM content to fully load before accessing the class and data attribute that are needed and storing them as variables
@@ -21,15 +21,15 @@ This event listener:
 4) changeContent function is called with secondView string passed in.   
 */
 document.addEventListener("DOMContentLoaded", function () {
-  let weatherCards = document.querySelectorAll('.weather-cards');
-  let mainContent = document.querySelector('[data-main-content]');
+  let weatherCards = document.querySelectorAll(".weather-cards");
+  let mainContent = document.querySelector("[data-main-content]");
 
-  function changeContent (newContent) {
+  function changeContent(newContent) {
     mainContent.innerHTML = newContent;
-  };
+  }
   weatherCards.forEach(function (card) {
     card.addEventListener("click", function () {
-      let clickedCard = card.querySelector('.weather-icon').alt;
+      let clickedCard = card.querySelector(".weather-icon").alt;
       let secondView = `
       <main class="container-fluid text-center">
       <!-- Intro Message -->
