@@ -60,7 +60,6 @@ export function calculateAverages(array) {
 
   let keys = Object.keys(array[0]);
   let weatherCodeArray = array.map((value) => value.weatherCode);
-  console.log(weatherCodeArray);
   let arrayAveraged = {};
 
   keys.forEach((key) => {
@@ -90,7 +89,6 @@ export function calculateAverages(array) {
     }
   });
 
-  console.log("arrayAveraged:", arrayAveraged);
   return arrayAveraged;
 }
 
