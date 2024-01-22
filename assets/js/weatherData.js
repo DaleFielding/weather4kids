@@ -1,5 +1,5 @@
 import { convertSecondsToHourly, calculateAverages } from "./math.js";
-
+import { setWeatherCards } from "./weatherCards.js";
 // const fetch = require('node-fetch'); // commented out as this stops it working in browser console.
 const baseUrl = "http://api.weatherapi.com/v1";
 const apiKey = "211d38f5813f4f90bfa70515240501";
@@ -82,6 +82,14 @@ function getWeatherData() {
       let eveningAverages = calculateAverages(periodsOfTheDay.evening);
       let nightAverages = calculateAverages(periodsOfTheDay.night);
 
+      let periodsOfTheDayAverages = {
+        stillNightAverages,
+        morningAverages,
+        afternoonAverages,
+        eveningAverages,
+        nightAverages,
+      };
+
       let { currentPeriodAverages } = calculateCurrentPeriod(
         localTime,
         stillNightAverages,
@@ -90,8 +98,13 @@ function getWeatherData() {
         eveningAverages,
         nightAverages
       );
+
       setIntroMsg(locationName, currentPeriodAverages);
-      // console.log("Current Period", currentPeriod);
+      setWeatherCards(periodsOfTheDayAverages);
+      // console.log(
+      //   "periodsOfTheDayAverages",
+      //   periodsOfTheDayAverages.afternoonAverages.weatherType
+      // );
       // console.log("Current Period Averages", currentPeriodAverages);
       // console.log("All Data:", data);
       // console.log ("Hour:", hour);
