@@ -31,7 +31,6 @@ document.addEventListener("DOMContentLoaded", function () {
     card.addEventListener("click", function () {
       let clickedCard = card.querySelector(".weather-icon").alt;
       let secondView = `
-      <section data-main-section>
       <!-- Exit icon -->
       <section class="cross-icon-container row">
         <a href="index.html" class="col-12">
@@ -114,7 +113,6 @@ document.addEventListener("DOMContentLoaded", function () {
         </div>
         <!-- /Learn more button -->
       </section>
-    </section>
       `;
       changeContent(secondView);
       setWeatherDetails(currentPeriodAveragesGlobal);
