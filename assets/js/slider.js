@@ -1,3 +1,5 @@
+// Reminder - I need to remember to add comments, and tidy up my code.
+
 document.addEventListener("DOMContentLoaded", function () {
   const laterButton = document.querySelector("[data-later-button]");
   const earlierButton = document.querySelector("[data-earlier-button]");
@@ -32,14 +34,16 @@ document.addEventListener("DOMContentLoaded", function () {
       }
 
       if (nextNextCard) {
-        // prevCard.classList.remove("d-none", "d-sm-block", "col-sm-3");
         nextNextCard.classList.add("d-sm-block", "col-sm-3");
       }
 
       lastCard.classList.add("d-sm-block", "col-sm-3");
       if (lastCard !== nextCard.nextElementSibling) {
-        // console.log(nextCard.nextElementSibling);
         lastCard.classList.remove("d-sm-block", "col-sm-3");
+      }
+
+      if (prevCard !== firstCard) {
+        firstCard.classList.remove("offset-sm-3");
       }
     }
   });
@@ -57,20 +61,28 @@ document.addEventListener("DOMContentLoaded", function () {
       if (!prevCard.previousElementSibling) {
         earlierButton.classList.add("d-none");
       }
+
       currentCard.classList.add("d-none", "d-sm-block", "col-sm-3");
       currentCard.classList.remove("col-sm-6");
       prevCard.classList.remove("d-none");
       prevCard.classList.add("col-12", "col-sm-6");
+
       if (nextCard) {
         nextCard.classList.remove("d-none", "d-sm-block", "col-sm-3");
         nextCard.classList.add("d-none");
       }
+
       if (prevPrevCard) {
         prevPrevCard.classList.add("d-sm-block", "col-sm-3");
       }
+
       firstCard.classList.add("d-sm-block", "col-sm-3");
       if (firstCard !== prevCard.previousElementSibling) {
         firstCard.classList.remove("d-sm-block", "col-sm-3");
+      }
+
+      if (prevCard === firstCard) {
+        firstCard.classList.add("offset-sm-3", "d-sm-block", "col-sm-3");
       }
     }
   });
