@@ -1,7 +1,7 @@
 import { convertSecondsToHourly, calculateAverages } from "./math.js";
 import { setWeatherCards } from "./weatherCards.js";
 // const fetch = require('node-fetch'); // commented out as this stops it working in browser console.
-const baseUrl = "http://api.weatherapi.com/v1";
+const baseUrl = "https://api.weatherapi.com/v1";
 const apiKey = "211d38f5813f4f90bfa70515240501";
 let locationName = "Bath";
 
@@ -198,7 +198,7 @@ function getLocation() {
     const { latitude, longitude } = position.coords;
 
     fetch(
-      `http://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${latitude},${longitude}`
+      `https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${latitude},${longitude}`
     )
       .then((response) => response.json())
       .then((data) => {
