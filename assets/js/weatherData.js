@@ -58,17 +58,17 @@ function getWeatherData() {
         condition: entry.condition,
         weatherCode: entry.condition.code,
       }));
-      // console.log(hourlyWeatherArray[0].weatherCode)
 
       /* Slice hourlyWeatherArray into separate arrays for the different periods of the day. 
-      The index of hourlyWeatherArray runs from 0-24 which represents each hour of the day; 0 = 1am, 1 = 2am etc.
-      I have purposely left out indexes 0-4 as before morning will not be included within the site. */
+      The index of hourlyWeatherArray runs from 0-23 which represents each hour of the day; 0 = 12am, 1 = 1am etc. */
+      const stillNight = hourlyWeatherArray.slice(0, 4);
       const morning = hourlyWeatherArray.slice(5, 11);
       const afternoon = hourlyWeatherArray.slice(12, 17);
       const evening = hourlyWeatherArray.slice(18, 21);
       const night = hourlyWeatherArray.slice(22, 24);
 
       const periodsOfTheDay = {
+        stillNight,
         morning,
         afternoon,
         evening,
@@ -76,6 +76,7 @@ function getWeatherData() {
       };
 
       // Pass periods of the day to the calculate averages function and store the return value into variables
+      let stillNightAverages = calculateAverages(periodsOfTheDay.stillNight);
       let morningAverages = calculateAverages(periodsOfTheDay.morning);
       let afternoonAverages = calculateAverages(periodsOfTheDay.afternoon);
       let eveningAverages = calculateAverages(periodsOfTheDay.evening);
@@ -83,6 +84,7 @@ function getWeatherData() {
 
       let { currentPeriodAverages } = calculateCurrentPeriod(
         localTime,
+        stillNightAverages,
         morningAverages,
         afternoonAverages,
         eveningAverages,
@@ -117,6 +119,7 @@ function getWeatherData() {
 **/
 function calculateCurrentPeriod(
   localTime,
+  stillNightAverages,
   morningAverages,
   afternoonAverages,
   eveningAverages,
@@ -126,7 +129,10 @@ function calculateCurrentPeriod(
   let currentPeriodAverages;
 
   let currentHour = new Date(localTime).getHours();
-  if (currentHour >= 5 && currentHour < 12) {
+  if (currentHour >= 0 && currentHour < 5) {
+    currentPeriod = "stillNight";
+    currentPeriodAverages = stillNightAverages;
+  } else if (currentHour >= 5 && currentHour < 12) {
     currentPeriod = "Morning";
     currentPeriodAverages = morningAverages;
   } else if (currentHour >= 12 && currentHour < 18) {
