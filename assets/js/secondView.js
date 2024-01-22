@@ -14,7 +14,7 @@ function setWeatherDetails(currentPeriodAveragesGlobal) {
 /*
 This event listener:
 1) Waits for DOM content to fully load before accessing the class and data attribute that are needed and storing them as variables
-2) Defines a function changeContent that allows the inner html of the main content to be changed 
+2) Defines a function changeContent that allows the inner html of the main section content to be changed 
 3) Loops over each weather card to add click event listeners for each card
   3a) When executed the value of the alt attribute is accessed and stored in the variable clickedCard
   3b) intended new content is declared under the variable secondView
@@ -22,24 +22,16 @@ This event listener:
 */
 document.addEventListener("DOMContentLoaded", function () {
   let weatherCards = document.querySelectorAll(".weather-cards");
-  let mainContent = document.querySelector("[data-main-content]");
+  let mainSection = document.querySelector("[data-main-section]");
 
   function changeContent(newContent) {
-    mainContent.innerHTML = newContent;
+    mainSection.innerHTML = newContent;
   }
   weatherCards.forEach(function (card) {
     card.addEventListener("click", function () {
       let clickedCard = card.querySelector(".weather-icon").alt;
       let secondView = `
-      <main class="container-fluid text-center">
-      <!-- Intro Message -->
-      <div class="row justify-content-center align-items-center">
-        <h2 class="intro-message col-12 col-sm-9 text-center">
-          Hi there! Please allow location access so that we can tell you the
-          current weather. Or search for a city!
-        </h2>
-      </div>
-      <!-- /Intro Message -->
+      <section data-main-section>
       <!-- Exit icon -->
       <section class="cross-icon-container row">
         <a href="index.html" class="col-12">
@@ -55,7 +47,10 @@ document.addEventListener("DOMContentLoaded", function () {
       <section class="weather-and-audio-icons row align-items-center">
         <!-- Weather details -->
         <div class="d-none d-md-block col-md-3">
-          <div class="weather-details-container d-flex align-items-center" data-weather-details>
+          <div
+            class="weather-details-container d-flex align-items-center"
+            data-weather-details
+          >
             <ul>
               <li>Wind =</li>
               <li>Precipitation =</li>
@@ -89,6 +84,7 @@ document.addEventListener("DOMContentLoaded", function () {
         </div>
         <!-- /Audio + message -->
       </section>
+      <!-- Snippet -->
       <section class="snippet-container row">
         <div class="snippet col-12">
           <p>
@@ -118,7 +114,7 @@ document.addEventListener("DOMContentLoaded", function () {
         </div>
         <!-- /Learn more button -->
       </section>
-    </main>
+    </section>
       `;
       changeContent(secondView);
       setWeatherDetails(currentPeriodAveragesGlobal);
