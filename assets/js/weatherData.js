@@ -7,6 +7,7 @@ let locationName = "Bath";
 
 // Export the below variable (which will be an object containing data) so that the its value can be accessed from other files without having to call getWeatherData again.
 export let currentPeriodAveragesGlobal;
+export let periodsOfTheDayAveragesGlobal;
 
 /* getWeatherData() function:
 - Fetch the weather data
@@ -117,7 +118,10 @@ function getWeatherData() {
       // console.log("Evening Averages:", eveningAverages);
       // console.log("Night Averages:", nightAverages);
 
-      return (currentPeriodAveragesGlobal = currentPeriodAverages);
+      return (
+        (currentPeriodAveragesGlobal = currentPeriodAverages),
+        (periodsOfTheDayAveragesGlobal = periodsOfTheDayAverages)
+      );
     })
     .catch((error) => {
       console.error("Error:", error);
