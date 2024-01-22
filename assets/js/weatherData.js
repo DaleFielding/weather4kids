@@ -61,10 +61,10 @@ function getWeatherData() {
 
       /* Slice hourlyWeatherArray into separate arrays for the different periods of the day. 
       The index of hourlyWeatherArray runs from 0-23 which represents each hour of the day; 0 = 12am, 1 = 1am etc. */
-      const stillNight = hourlyWeatherArray.slice(0, 4);
-      const morning = hourlyWeatherArray.slice(5, 11);
-      const afternoon = hourlyWeatherArray.slice(12, 17);
-      const evening = hourlyWeatherArray.slice(18, 21);
+      const stillNight = hourlyWeatherArray.slice(0, 5);
+      const morning = hourlyWeatherArray.slice(5, 12);
+      const afternoon = hourlyWeatherArray.slice(12, 18);
+      const evening = hourlyWeatherArray.slice(18, 22);
       const night = hourlyWeatherArray.slice(22, 24);
 
       const periodsOfTheDay = {
