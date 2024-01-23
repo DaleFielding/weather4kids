@@ -91,7 +91,7 @@ function getWeatherData() {
         nightAverages,
       };
 
-      let { currentPeriodAverages } = calculateCurrentPeriod(
+      let { currentPeriodAverages, currentPeriod } = calculateCurrentPeriod(
         localTime,
         stillNightAverages,
         morningAverages,
@@ -99,14 +99,13 @@ function getWeatherData() {
         eveningAverages,
         nightAverages
       );
-
-      setIntroMsg(locationName, currentPeriodAverages);
+      setIntroMsg(locationName, currentPeriodAverages, currentPeriod);
       setWeatherCards(periodsOfTheDayAverages);
       // console.log(
       //   "periodsOfTheDayAverages",
       //   periodsOfTheDayAverages.afternoonAverages.weatherType
       // );
-      // console.log("Current Period Averages", currentPeriodAverages);
+      console.log("Current Period Averages", currentPeriodAverages);
       // console.log("All Data:", data);
       // console.log ("Hour:", hour);
       // console.log("Day:", day);
@@ -147,22 +146,22 @@ function calculateCurrentPeriod(
 
   let currentHour = new Date(localTime).getHours();
   if (currentHour >= 0 && currentHour < 5) {
-    currentPeriod = "stillNight";
+    currentPeriod = "before morning...Why are you awake?";
     currentPeriodAverages = stillNightAverages;
   } else if (currentHour >= 5 && currentHour < 12) {
-    currentPeriod = "Morning";
+    currentPeriod = "morning";
     currentPeriodAverages = morningAverages;
   } else if (currentHour >= 12 && currentHour < 18) {
-    currentPeriod = "Afternoon";
+    currentPeriod = "afternoon";
     currentPeriodAverages = afternoonAverages;
   } else if (currentHour >= 18 && currentHour < 21) {
-    currentPeriod = "Evening";
+    currentPeriod = "evening";
     currentPeriodAverages = eveningAverages;
   } else if (currentHour >= 21 && currentHour < 24) {
-    currentPeriod = "Night";
+    currentPeriod = "night";
     currentPeriodAverages = nightAverages;
   }
-  return { currentPeriodAverages };
+  return { currentPeriodAverages, currentPeriod };
 }
 
 /**
@@ -171,14 +170,14 @@ function calculateCurrentPeriod(
   - Pass the currentPeriodAverages object as the second parameter, allowing access to the weather data.
   - Update html for the intro message and display the desired data passed from the parameters.
   **/
-function setIntroMsg(foundLocation, currentPeriodAverages) {
+function setIntroMsg(foundLocation, currentPeriodAverages, currentPeriod) {
   let mainIntro = document.querySelector("[data-main-intro]");
   mainIntro.innerHTML = `
   <main class="container-fluid text-center">
   <!-- Intro Message -->
   <div class="row justify-content-center align-items-center">
     <h2 class="intro-message col-12 col-sm-9 text-center data-main-intro">
-      Hi there! You are in ${foundLocation}, the temperature is currently ${currentPeriodAverages.tempHourly}&degC.
+      Good ${currentPeriod}! You are in ${foundLocation} and the temperature is currently around ${currentPeriodAverages.tempHourly}&degC.
     </h2>
   </div>
   <!-- /Intro Message -->
