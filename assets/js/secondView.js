@@ -119,7 +119,7 @@ document.addEventListener("DOMContentLoaded", function () {
           <!--- /Go back button -->
           <!-- Learn more button -->
           <div class="col-4 col-md-3">
-            <div class="learn-more-btn">
+            <div class="learn-more-btn" data-learn-more-btn>
               <strong>Learn<br />More</strong>
             </div>
           </div>
@@ -154,6 +154,21 @@ document.addEventListener("DOMContentLoaded", function () {
       }
       changeContent(secondView);
       setWeatherDetails(averagedWeatherDetails);
+
+      /*
+      This click event generates a new random snippet from the snippets object when the learn more button is clicked. 
+      It then replaces the text content in the snippetContainer   */
+      document.addEventListener("click", function (event) {
+        if (event.target.matches("[data-learn-more-btn]")) {
+          let snippetContainer = document.querySelector("[data-snippet]");
+          let newRandomSnippet =
+            snippets.random[Math.floor(Math.random() * snippets.random.length)];
+          if (snippetContainer.querySelector("p")) {
+            snippetContainer.querySelector("p").textContent = newRandomSnippet;
+          }
+          console.log("Clicked Learn More");
+        }
+      });
     });
   });
 });
