@@ -154,3 +154,28 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
+
+const snippets = {
+  rainy:
+    "Rain is the liquid form of water that falls from the sky in drops. Rain fills lakes, ponds, rivers, and streams. It provides the fresh water needed by humans, animals, and plants.",
+  sunny:
+    "The sun is It is a hot ball of gases that gives off great amounts of energy, it is the largest object in our solar system",
+  cloudy:
+    "Clouds are formed when damp air moves upwards, then cools down. The clouds are made up of droplets of water or tiny bits of ice, which fall as rain or hail, or sleet or snow, when the air around the cloud warms up.",
+  stormy:
+    "Storms tend to have thick dark clouds and strong winds. There is often heavy rain or sleet, hail or snow, and thunder and lightning.",
+  snowy:
+    "Snowflakes are formed in clouds when water vapour freezes around a tiny piece of dirt in the air and becomes so heavy that it falls to the ground. Snowflakes have six sides and can be formed of 200 ice crystals.",
+  random: [
+    "A lightning bolt can be hotter than the sun – 30,000 degrees Celsius. The energy in this could keep a lightbulb lit for 3 months!",
+    "The fastest wind ever recorded in the UK was 142mph on the 13th February 1989 in Scotland – that’s over twice as fast as a cheetah can run!",
+    "The coldest temperature ever recorded was -89° Celsius in Antarctica in 1983",
+    "Thunder is one of the loudest noises in nature. It occurs when electricity made inside a cloud shoots towards the ground as lightning and heats the air. It is this heating up of the air that causes the thundering noise.",
+    "Many countries such as those in Asia and North America experience extreme winds and storms such as hurricanes, cyclones, tornadoes.These all have very strong winds which can knock buildings over and rip trees up from the ground. They can also cause flooding.",
+    "Changes in temperature cause winds to form which then move pockets of warm or cold air around.",
+    "When air is moved up (vertically) it can cause clouds to form and may result in precipitation (rain) and storms.",
+    "The weather in the UK is warmer when we are closer to the sun in the summer, and when warm winds blow warm air in from the south.",
+    "Winters tend to be colder and have more rain, sleet, hail and snow, while summer tends to be warmer and sunnier. Some countries are warm all year round, while others are cold all year round.",
+    "Weather is the way the air and the atmosphere feels. It includes the outside temperature, strength of the wind, and whether it is raining, sunny, hailing, snowing, sleeting, foggy, or cloudy.",
+  ],
+};
