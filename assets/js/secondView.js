@@ -2,6 +2,7 @@ import {
   currentPeriodAveragesGlobal,
   periodsOfTheDayAveragesGlobal,
 } from "./weatherData.js";
+import { getChosenSnippet } from "./snippet.js";
 
 /*
 setWeatherDetails:
@@ -45,6 +46,9 @@ document.addEventListener("DOMContentLoaded", function () {
     card.addEventListener("click", function () {
       let clickedCard = card.getAttribute("data-card");
       let htmlOfClickedCard = card.outerHTML;
+      let chosenSnippet =
+        "Awaiting snippet of information relating to weather.";
+      chosenSnippet = getChosenSnippet(htmlOfClickedCard, snippets);
       let secondView = `
         <!-- Exit icon -->
         <section class="cross-icon-container row">
@@ -94,10 +98,9 @@ document.addEventListener("DOMContentLoaded", function () {
         </section>
         <!-- Snippet -->
         <section class="snippet-container row">
-          <div class="snippet col-12">
+          <div class="snippet col-12" data-snippet>
             <p>
-              Snippet of information relating to the type of weather that was
-              clicked.
+              ${chosenSnippet}
             </p>
           </div>
         </section>
@@ -159,7 +162,7 @@ const snippets = {
   rainy:
     "Rain is the liquid form of water that falls from the sky in drops. Rain fills lakes, ponds, rivers, and streams. It provides the fresh water needed by humans, animals, and plants.",
   sunny:
-    "The sun is It is a hot ball of gases that gives off great amounts of energy, it is the largest object in our solar system",
+    "The sun is a hot ball of gases that gives off great amounts of energy, it is the largest object in our solar system",
   cloudy:
     "Clouds are formed when damp air moves upwards, then cools down. The clouds are made up of droplets of water or tiny bits of ice, which fall as rain or hail, or sleet or snow, when the air around the cloud warms up.",
   stormy:
