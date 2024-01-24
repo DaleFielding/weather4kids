@@ -36,6 +36,7 @@ This event listener:
 document.addEventListener("DOMContentLoaded", function () {
   let weatherCards = document.querySelectorAll(".weather-cards");
   let mainSection = document.querySelector("[data-main-section]");
+
   function changeContent(newContent) {
     mainSection.innerHTML = newContent;
   }
@@ -43,6 +44,7 @@ document.addEventListener("DOMContentLoaded", function () {
   weatherCards.forEach(function (card) {
     card.addEventListener("click", function () {
       let clickedCard = card.getAttribute("data-card");
+      let htmlOfClickedCard = card.outerHTML;
       let secondView = `
         <!-- Exit icon -->
         <section class="cross-icon-container row">
@@ -74,13 +76,7 @@ document.addEventListener("DOMContentLoaded", function () {
           <!-- /Weather details -->
           <!-- Weather Icon -->
           <div class="col-4 col-md-6">
-            <div class="clicked-weather-card weather-cards">
-              <img
-                class="weather-icon"
-                src="assets/images/weather-icons/rainy.png"
-                alt="cloudy but sunny icon"
-              />
-            </div>
+            ${htmlOfClickedCard}
           </div>
           <!-- /Weather Icon -->
           <!-- Audio + message -->
