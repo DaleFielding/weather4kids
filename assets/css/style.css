@@ -246,3 +246,44 @@ footer {
 }
 
 
+/* ----- 404 -----  */
+
+/* 404 intro message */
+.oops-message {
+  color: #c11a36; 
+}
+
+
+/* Sad logo */
+
+.sad-logo {
+  width: 100%;
+}
+
+.sad-logo-container  {
+
+  border-radius: 20px;
+  text-align: center;
+}
+
+/* Go to homepage button */
+
+.go-to-homepage-btn {
+  margin-top: 2rem;
+  padding-top: 0.6rem;
+  padding-bottom: 0.6rem;
+  text-align: center;
+  border: solid 3px #d82644;
+  border-radius: 0.4rem;
+  cursor: pointer;
+  font-family: 'Cabin', Calibri, sans-serif;
+  background-color: #c11a36;
+  
+}
+
+.button-link {
+ text-decoration: none;
+ color: white;
+ 
+}
+
