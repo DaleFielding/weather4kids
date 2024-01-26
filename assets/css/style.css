@@ -66,6 +66,12 @@ body {
   color: var(--my-blue)
 }
 
+.grey-button {
+  background-color: var(--my-grey);
+  border: solid 3px var(--my-grey-border);
+}
+
+
 .buttons i {
   font-size: 25px;
 }
