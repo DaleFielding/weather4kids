@@ -10,7 +10,7 @@
 
 body {
   font-family: Sniglet, Calibri, sans-serif;
-  color: var(--my-dark-blue);
+  color: var(--my-blue);
 }
 
 /* Colors */
@@ -114,6 +114,7 @@ header {
   border-radius: 20px;
   box-shadow: 0 4px 8px 0 var(--my-light-blue), 0 6px 20px 0 var(--my-light-blue);
   text-align: center;
+  cursor: pointer;
 }
 
 .weather-icon {
@@ -142,7 +143,6 @@ header {
 
 .rotate-30deg {
   transform: rotate(-30deg);
-  color: black
 }
 
 /* ----- FOOTER -----  */
