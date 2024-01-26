@@ -66,7 +66,7 @@ document.addEventListener("DOMContentLoaded", function () {
           <!-- Weather details -->
           <div class="d-none d-md-block col-md-3">
             <div
-              class="weather-details-container d-flex align-items-center"
+              class="info-boxes weather-details-container d-flex align-items-center"
               data-weather-details
             >
               <ul>
@@ -86,7 +86,7 @@ document.addEventListener("DOMContentLoaded", function () {
           <!-- Audio + message -->
           <div class="col-8 col-md-3 align-items-center">
             <div
-              class="audio-message-container row d-flex align-items-center justify-content-center"
+              class="info-boxes audio-message-container row d-flex align-items-center justify-content-center"
             >
               <i class="fa-solid fa-volume-high col-12 align-self-end"></i>
               <p class="col-12">
@@ -97,7 +97,7 @@ document.addEventListener("DOMContentLoaded", function () {
           <!-- /Audio + message -->
         </section>
         <!-- Snippet -->
-        <section class="snippet-container row">
+        <section class="info-boxes snippet-container row">
           <div class="snippet col-12" data-snippet>
             <p>
               ${chosenSnippet}
