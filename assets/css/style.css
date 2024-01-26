@@ -32,6 +32,15 @@ body {
 
 /* Buttons */
 
+.animate-click:hover {
+  transform: scale(1.03);
+  box-shadow: rgba(0, 0, 0, 0);
+}
+.animate-click:active {
+  opacity: 0.9;
+  transform: scale(0.95);
+}
+
 .buttons {
   color: white;
   text-align: center;

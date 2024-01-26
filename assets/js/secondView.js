@@ -52,9 +52,9 @@ document.addEventListener("DOMContentLoaded", function () {
       let secondView = `
         <!-- Exit icon -->
         <section class="cross-icon-container row">
-          <a href="index.html" class="col-12">
+          <a href="index.html" class="col-12k">
             <img
-              class="cross-icon"
+              class="cross-icon animate-click"
               src="assets/images/cross-icon.png"
               alt="cross/exit icon"
               style="width: 2rem; height: 2rem"
@@ -88,7 +88,7 @@ document.addEventListener("DOMContentLoaded", function () {
             <div
               class="info-boxes audio-message-container row d-flex align-items-center justify-content-center"
             >
-              <i class="fa-solid fa-volume-high col-12 align-self-end"></i>
+              <i class="fa-solid fa-volume-high col-12 align-self-end animate-click"></i>
               <p class="col-12">
                 Click icon above to hear sounds of when it is (weather type)
               </p>
@@ -109,7 +109,7 @@ document.addEventListener("DOMContentLoaded", function () {
           <!--- Go back button -->
           <div class="col-4 col-md-3">
             <a href="index.html">
-              <div class="go-back-btn buttons blue-button">
+              <div class="go-back-btn buttons blue-button animate-click">
                 Go back<br /><i
                   class="fa-solid fa-arrow-left"
                 ></i>
@@ -119,7 +119,7 @@ document.addEventListener("DOMContentLoaded", function () {
           <!--- /Go back button -->
           <!-- Learn more button -->
           <div class="col-4 col-md-3">
-            <div class="learn-more-btn buttons blue-button" data-learn-more-btn>
+            <div class="learn-more-btn buttons blue-button animate-click" data-learn-more-btn>
               Learn<br />More
             </div>
           </div>
