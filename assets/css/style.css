@@ -283,3 +283,10 @@ form {
   border: 3px solid var(--my-grey-border);
 }
 
+/* ----- Media queries ----- */
+@media (min-width: 576px) {
+  .cross-icon-container {
+    margin: -22px;
+  }
+  
+}
