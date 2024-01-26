@@ -9,7 +9,8 @@
 }
 
 body {
-  font-family: Sniglet, Calibri, sans-serif
+  font-family: Sniglet, Calibri, sans-serif;
+  color: var(--my-dark-blue);
 }
 
 /* Colors */
@@ -20,10 +21,47 @@ body {
   --my-crimson-border: #d42845;
   --my-blue: #1183f4;
   --my-blue-border: #349aff;
-  --my-light-blue: #98f0fa;
-  --my-light-blue-border: #b0f6fd;
+  --my-dark-blue: #0055aa;
+  --my-dark-blue-border: #046cd448;
+  --my-light-blue: #93ddf0;
   --my-grey: #e8e8e8;
-  --my-greyborder: #f1f1f1;
+  --my-grey-border: #cfcfcf;
+}
+
+/* Buttons */
+
+.buttons {
+  color: white;
+  text-align: center;
+  border-radius: 0.3rem;
+  cursor: pointer;
+  width: 100%;
+  min-height: 58px;
+}
+
+.blue-button {
+  background-color: var(--my-blue);
+  border: solid 3px var(--my-blue-border);
+}
+
+.crimson-button {
+  background-color: var(--my-crimson);
+  border: solid 3px var(--my-crimson-border);
+}
+
+.light-blue-button {
+  /* background-color: white; */
+  border: solid 3px var(--my-dark-blue-border);
+  color: var(--my-dark-blue)
+}
+
+.buttons i {
+  font-size: 25px;
+}
+
+.single-line-button {
+  padding-top: 0.8rem;
+  padding-bottom: 0.8rem;
 }
 
 a {
@@ -66,16 +104,15 @@ header {
 }
 
 .intro-message {
-  max-width: 940px;
   padding: 5px;
 }
 
 /* Weather-cards */
 
 .weather-cards {
-  border: solid 6px #afd3df;
+  border: solid 5px var(--my-light-blue);
   border-radius: 20px;
-  box-shadow: 0 4px 8px 0 #afd3df, 0 6px 20px 0 #afd3df;
+  box-shadow: 0 4px 8px 0 var(--my-light-blue), 0 6px 20px 0 var(--my-light-blue);
   text-align: center;
 }
 
@@ -83,37 +120,6 @@ header {
   max-width: 100%;
 }
 
-/* Buttons */
-
-.buttons {
-  color: white;
-  text-align: center;
-  border-radius: 0.4rem;
-  cursor: pointer;
-  width: 100%;
-  min-height: 58px;
-}
-
-.blue-button {
-  background-color: var(--my-blue);
-  border: solid 3px var(--my-blue-border);
-}
-
-.crimson-button {
-  background-color: var(--my-crimson);
-  border: solid 3px var(--my-crimson-border);
-}
-
-.buttons i {
-  font-size: 25px;
-}
-
-/* Go to homepage button */
-.go-to-homepage-btn {
-  margin-top: 1.5rem;
-  padding-top: 0.8rem;
-  padding-bottom: 0.8rem;
-}
 
 /* Today buttons-and-click-message-container */
 
@@ -132,34 +138,29 @@ header {
 
 .learn-arrow-img {
   max-width: 100%;
-
 }
 
 .rotate-30deg {
   transform: rotate(-30deg);
+  color: black
 }
 
 /* ----- FOOTER -----  */
 
 footer {
   margin-top: 5vh;
-  border-top: solid 3px #c0e9f7;
-  background-color: #c0e9f7; 
-  font-family: 'Cabin', Calibri, sans-serif;
+  background-color: var(--my-light-blue); 
 
+}
+
+footer p {
+  margin-bottom: 0; 
 }
 
 .footer-links-container {
   padding: 2rem 0;
 }
 
-.feedback-link-container p {
-  margin: 0;
-  border: solid 3px rgba(27, 137, 180, 0.5);
-  border-radius: 10px;
-  color: rgba(27, 137, 180);
-  padding: 0.2rem 0.6rem;
-}
 
 .social-container {
   margin: auto;
@@ -176,7 +177,7 @@ footer {
 }
 
 .social-container a {
-  color: rgb(27, 137, 180);
+  color: var(--my-dark-blue);
   text-decoration: none;
 }
 
@@ -261,10 +262,19 @@ footer {
 }
 
 .sad-logo-container  {
-
   border-radius: 20px;
   text-align: center;
 }
 
 
 /* ----- Contact form ----- */
+
+form {
+  background-color: var(--my-grey);
+  text-align: start;
+}
+
+.form-control {
+  border: 3px solid var(--my-grey-border);
+}
+
