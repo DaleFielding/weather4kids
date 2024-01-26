@@ -109,8 +109,8 @@ document.addEventListener("DOMContentLoaded", function () {
           <!--- Go back button -->
           <div class="col-4 col-md-3">
             <a href="index.html">
-              <div class="go-back-btn">
-                <strong>Go back</strong><br /><i
+              <div class="go-back-btn buttons blue-button">
+                Go back<br /><i
                   class="fa-solid fa-arrow-left"
                 ></i>
               </div>
@@ -119,8 +119,8 @@ document.addEventListener("DOMContentLoaded", function () {
           <!--- /Go back button -->
           <!-- Learn more button -->
           <div class="col-4 col-md-3">
-            <div class="learn-more-btn" data-learn-more-btn>
-              <strong>Learn<br />More</strong>
+            <div class="learn-more-btn buttons blue-button" data-learn-more-btn>
+              Learn<br />More
             </div>
           </div>
           <!-- /Learn more button -->
