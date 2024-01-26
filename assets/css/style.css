@@ -12,6 +12,24 @@ body {
   font-family: Sniglet, Calibri, sans-serif
 }
 
+/* Colors */
+:root {
+  --my-yellow: #fac450;
+  --my-yellow-border: #ffcd61;
+  --my-crimson: #c11a36;
+  --my-crimson-border: #d42845;
+  --my-blue: #1183f4;
+  --my-blue-border: #349aff;
+  --my-light-blue: #98f0fa;
+  --my-light-blue-border: #b0f6fd;
+  --my-grey: #e8e8e8;
+  --my-greyborder: #f1f1f1;
+}
+
+a {
+  text-decoration: none;
+}
+
 /* ----- HEADER ELEMENTS ----- */
 
 header {
@@ -65,24 +83,44 @@ header {
   max-width: 100%;
 }
 
+/* Buttons */
+
+.buttons {
+  color: white;
+  text-align: center;
+  border-radius: 0.4rem;
+  cursor: pointer;
+  width: 100%;
+  min-height: 58px;
+}
+
+.blue-button {
+  background-color: var(--my-blue);
+  border: solid 3px var(--my-blue-border);
+}
+
+.crimson-button {
+  background-color: var(--my-crimson);
+  border: solid 3px var(--my-crimson-border);
+}
+
+.buttons i {
+  font-size: 25px;
+}
+
+/* Go to homepage button */
+.go-to-homepage-btn {
+  margin-top: 1.5rem;
+  padding-top: 0.8rem;
+  padding-bottom: 0.8rem;
+}
+
 /* Today buttons-and-click-message-container */
 
 .buttons-and-click-message-container {
   padding-top: 10px;
 }
 
-.today-buttons {
-  text-align: center;
-  border: solid 3px #afd3df;
-  box-shadow: 0 2px 4px 0 #afd3df, 0 3px 10px 0 #afd3df;
-  border-radius: 5px;
-  cursor: pointer;
-  font-family: 'Cabin', Calibri, sans-serif;
-}
-
-.today-buttons i {
-  font-size: 32px;
-}
 
 /* Click to learn arrow/message */
 
@@ -208,43 +246,6 @@ footer {
   padding-top: 12px;
 }
 
-.back-and-learn-btn-container {
-  padding: 12px 0;
-
-}
-
-.back-and-learn-btn-container a {
-  color: black;
-  text-decoration: none;
-
-}
-
-.learn-more-btn {
-  min-height: 60px;
-}
-
-/* Go back button */
-
-.go-back-btn {
-  text-align: center;
-  border: solid 1px #afd3df;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.go-back-btn i {
-  font-size: 32px;
-}
-
-/* Learn More button */
-
-.learn-more-btn {
-  text-align: center;
-  border: solid 1px #afd3df;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
 
 /* ----- 404 -----  */
 
@@ -252,7 +253,6 @@ footer {
 .oops-message {
   color: #c11a36; 
 }
-
 
 /* Sad logo */
 
@@ -266,24 +266,5 @@ footer {
   text-align: center;
 }
 
-/* Go to homepage button */
 
-.go-to-homepage-btn {
-  margin-top: 2rem;
-  padding-top: 0.6rem;
-  padding-bottom: 0.6rem;
-  text-align: center;
-  border: solid 3px #d82644;
-  border-radius: 0.4rem;
-  cursor: pointer;
-  font-family: 'Cabin', Calibri, sans-serif;
-  background-color: #c11a36;
-  
-}
-
-.button-link {
- text-decoration: none;
- color: white;
- 
-}
-
+/* ----- Contact form ----- */
