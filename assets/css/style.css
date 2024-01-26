@@ -9,23 +9,25 @@
 }
 
 body {
-  font-family: Sniglet, Calibri, sans-serif;
+  font-family: var(--snigglet-font);
   color: var(--my-blue);
 }
 
-/* Colors */
+
 :root {
+  /* Colors */
   --my-yellow: #fac450;
   --my-yellow-border: #ffcd61;
   --my-crimson: #c11a36;
   --my-crimson-border: #d42845;
   --my-blue: #1183f4;
-  --my-blue-border: #349aff;
-  --my-dark-blue: #0055aa;
-  --my-dark-blue-border: #046cd448;
+  --my-blue-border: #349affbd;
   --my-light-blue: #93ddf0;
   --my-grey: #e8e8e8;
   --my-grey-border: #cfcfcf;
+  /* font */
+  --snigglet-font: Sniglet, Calibri, sans-serif;
+  --cabin-font: 'Cabin', Calibri, sans-serif;
 }
 
 /* Buttons */
@@ -51,8 +53,8 @@ body {
 
 .light-blue-button {
   /* background-color: white; */
-  border: solid 3px var(--my-dark-blue-border);
-  color: var(--my-dark-blue)
+  border: solid 3px var(--my-blue-border);
+  color: var(--my-blue)
 }
 
 .buttons i {
@@ -87,14 +89,14 @@ header {
 .search-container input {
   font-size: 14px;
   text-align: center;
-  font-family: 'Cabin', Calibri, sans-serif;
+  font-family: var(--cabin-font);
   
 }
 
 .intro-message {
   margin-top: 3vh;
-  margin-bottom: 3vh;
-  font-family: 'Cabin', Calibri, sans-serif;
+  margin-bottom: 2vh;
+  font-family: var(--cabin-font);
 }
 
 /* ----- MAIN ----- */
@@ -177,7 +179,6 @@ footer p {
 }
 
 .social-container a {
-  color: var(--my-dark-blue);
   text-decoration: none;
 }
 
@@ -187,6 +188,15 @@ footer p {
 
 /* ----- SECOND VIEW -----  */
 
+.info-boxes {
+  border: solid 3px var(--my-yellow);
+  margin: 0;
+  min-height: 150px;
+  align-items: center;
+  box-shadow: 0 4px 8px 0 var(--my-yellow);
+  font-family: var(--cabin-font);
+}
+
 /* Cross icon */
 
 .cross-icon {
@@ -194,39 +204,30 @@ footer p {
 }
 
 .cross-icon-container {
-  padding: 12px 12px 0 12px;
+  padding: 0 12px;
   text-align: end;
 }
 
 /* Weather details  */
 
-.weather-details-container {
-  margin: 0;
-  min-height: 150px;
-  padding-left: 6px;
-  border: solid 2px #afd3df;
-  text-align: start;
-  
-}
-
 .weather-details-container ul {
   list-style-type: none;
-  padding-left: 8px;
+  padding-left: 16px;
+  text-align: start;
 }
 
 /* Audio message  */
 
 .audio-message-container {
-  margin: 0;
-  min-height: 150px;
   padding-left: 6px;
-  border: solid 2px #afd3df;
   text-align: center;
+ 
 }
 
 .audio-message-container i {
   font-size: 2rem;
-  color: rgba(27, 137, 180, 0.5);
+  color: var(--my-blue);
+  cursor: pointer;
   
 }
 /* Snippet  */
@@ -234,11 +235,15 @@ footer p {
 .snippet-container {
   margin: 1rem 0px;
   text-align: center;
-  border: solid 2px #afd3df;
+}
+
+.snippet-container p {
+  font-size: 1.4rem;
 }
 
 .snippet {
   padding: 2rem 1rem;
+  
 }
 
 /* Back and learn more buttons */
