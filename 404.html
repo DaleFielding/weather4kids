@@ -37,7 +37,7 @@
     <header class="container-fluid">
       <div class="row align-items-end">
         <!-- Logo -->
-        <div class="col-3 col-md-2 p-1">
+        <div class="col-3 col-md-2 p-1 animate-click">
           <a href="index.html">
             <img
               class="logo"
@@ -49,7 +49,7 @@
         <!-- /Logo -->
         <!-- Site Name -->
         <div class="col-6 site-name">
-          <h1>Weather 4 Kids</h1>
+          <h1 class="m-0">Weather 4 Kids</h1>
         </div>
         <!-- /Site Name -->
         <!-- Searchbar -->
@@ -63,7 +63,13 @@
               placeholder=" Search location is coming soon"
               autocomplete="off"
             />
-            <span class="search-icon input-group-text grey-button">
+            <span
+              class="search-icon input-group-text grey-button"
+              data-bs-toggle="tooltip"
+              data-bs-placement="bottom"
+              data-bs-custom-class="custom-tooltip"
+              data-bs-title=" Search location is coming soon"
+            >
               <i
                 class="fa-solid fa-magnifying-glass"
                 style="font-size: 40px"
@@ -74,7 +80,8 @@
         <!-- /Searchbar -->
       </div>
     </header>
-    <main class="container-fluid text-center">
+
+    <main class="container-fluid text-center" data-main-content>
       <!-- 404 Intro Message -->
       <section data-main-section>
         <div class="row justify-content-center align-items-center">
@@ -110,18 +117,15 @@
     </main>
 
     <footer class="container-fluid">
-      <section
-        class="footer-links-container row justify-content-center align-items-center"
-      >
+      <section class="footer-links-container row">
         <!-- Feedback Form -->
-        <div class="col col-md-3">
-          <a href="contact.html">
-            <p
-              class="single-line-button buttons light-blue-button animate-click"
-            >
-              Contact / Feedback
-            </p>
-          </a>
+        <div class="col col-md-3 animate-click">
+          <p
+            class="single-line-button buttons light-blue-button animate-click"
+            data-contact-button
+          >
+            Contact / Feedback
+          </p>
         </div>
         <!-- /Feedback Form-->
         <!-- Intentional blank column - for intended spacing -->
@@ -165,5 +169,6 @@
       crossorigin="anonymous"
     ></script>
     <script src="assets/js/tooltip.js" type="module"></script>
+    <script src="assets/js/contact-form.js" type="module"></script>
   </body>
 </html>
