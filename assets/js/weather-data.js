@@ -9,12 +9,12 @@ let locationName = "Bath";
 export let currentPeriodAveragesGlobal;
 export let periodsOfTheDayAveragesGlobal;
 
-/* getWeatherData() function:
+/** getWeatherData() function:
 - Fetch the weather data
 - destructure data into variables if fetch succesfull
 - throw an error if there's an issue with the response 
 - catch the error and display it in the console
-*/
+**/
 function getWeatherData() {
   let url = `${baseUrl}/forecast.json?key=${apiKey}&q=${locationName}&days=1&current.json?key=${apiKey}&q=${locationName}`;
 
@@ -101,21 +101,6 @@ function getWeatherData() {
       );
       setIntroMsg(locationName, currentPeriodAverages, currentPeriod);
       setWeatherCards(periodsOfTheDayAverages);
-      // console.log(
-      //   "periodsOfTheDayAverages",
-      //   periodsOfTheDayAverages.afternoonAverages.weatherType
-      // );
-      console.log("Current Period Averages", currentPeriodAverages);
-      // console.log("All Data:", data);
-      // console.log ("Hour:", hour);
-      // console.log("Day:", day);
-      // console.log("periods of the day:", periodsOfTheDay);
-      // console.log("Map Hourly:", hourlyWeatherArray);
-      // console.log("Periods Of The Day:", periodsOfTheDay);
-      // console.log("Morning Averages:", morningAverages);
-      // console.log("Afternoon Averages:", afternoonAverages);
-      // console.log("Evening Averages:", eveningAverages);
-      // console.log("Night Averages:", nightAverages);
 
       return (
         (currentPeriodAveragesGlobal = currentPeriodAverages),
@@ -190,7 +175,7 @@ getLocation:
 - Fetch to reverse geocode in order to obtain the city/area from data.location.name 
 - Update the locationName variable. 
 - Call the setIntroMsg function passing in the found location as a parameter
-- Catch any errors if unable to get location.
+- Catch any errors if unable to get location and set default location so app will stil lbe functional without location access.
 **/
 function getLocation() {
   const successCallback = (position) => {
@@ -202,7 +187,6 @@ function getLocation() {
       .then((response) => response.json())
       .then((data) => {
         locationName = data.location.name;
-        // console.log(locationName)
         getWeatherData(locationName);
       })
       .catch((error) => {
@@ -212,6 +196,8 @@ function getLocation() {
 
   const errorCallback = (error) => {
     console.log(error);
+    locationName = "London"; //default location if error/location denied.
+    getWeatherData(locationName);
   };
   navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
 }
