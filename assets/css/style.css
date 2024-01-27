@@ -71,7 +71,6 @@ body {
   border: solid 3px var(--my-grey-border);
 }
 
-
 .buttons i {
   font-size: 25px;
 }
@@ -272,7 +271,7 @@ footer p {
 
 /* 404 intro message */
 .oops-message {
-  color: #c11a36; 
+  color: var(--my-crimson); 
 }
 
 /* Sad logo */
@@ -296,6 +295,13 @@ form {
 
 .form-control {
   border: 3px solid var(--my-grey-border);
+}
+
+.form-validation-errors {
+  color: var(--my-crimson);
+}
+.form-validation-errors:first-letter {
+  text-transform: capitalize;
 }
 
 /* ----- Media queries -----  */
