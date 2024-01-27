@@ -97,7 +97,12 @@ header {
 
 .site-name {
   text-align: center;
+}
 
+.site-name h1 {
+  color: var(--my-light-blue);
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: var(--my-blue);
 }
 
 .search-container input {
