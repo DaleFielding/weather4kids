@@ -7,13 +7,16 @@ import { getChosenSnippet } from "./snippet.js";
 /*
 setWeatherDetails:
 1) Takes averagedWeatherDetails as a parameter
-2) Accesses the data attribute of the weatherDetails section and stores as a variable to be used with JS.
-2) Changes the inner HTML of weather details 
-   2a) A list is created for specific weather details
-   2b) Dynamic values are taken from averagedWeatherDetails to be displayed in the lists.
+2) Accesses the data attributes of the weatherDetails section and the soundText section then stores as a variable to be used with JS
+3) Changes the inner HTML of weather details 
+   3a) A list is created for specific weather details
+   3b) Dynamic values are taken from averagedWeatherDetails to be displayed in the lists.
+3) Changes the inner HTML of soundText adding dynamic value for the weatherType
 */
 function setWeatherDetails(averagedWeatherDetails) {
   let weatherDetails = document.querySelector("[data-weather-details]");
+  let soundText = document.querySelector("[data-sound-text]");
+  let weatherType = averagedWeatherDetails.weatherType;
   weatherDetails.innerHTML = `
     <ul>
       <li>Wind = ${averagedWeatherDetails.windHourly}</li>
@@ -22,7 +25,45 @@ function setWeatherDetails(averagedWeatherDetails) {
       <li>Humidity = ${averagedWeatherDetails.humidityHourly}</li>
     </ul> 
   `;
+  soundText.innerHTML = `Click icon above to hear sounds of when it is ${weatherType}`;
   console.log(averagedWeatherDetails);
+}
+
+let sound = new Audio();
+/** 
+playSound function:
+1) Checks if sound is playing and if so pauses the sound then resets current time.
+2) If sound is not playing it will execute a switch statement to determine the appropriate sound to be assigned
+3) It will then play sound.
+ **/
+function playSound(weatherType) {
+  if (!sound.paused) {
+    sound.pause();
+    sound.currentTime = 0;
+  } else {
+    console.log(weatherType);
+    switch (weatherType) {
+      case "rainy":
+        sound.src = "assets/audio/heavy-rain.mp3";
+        break;
+      case "sunny":
+        sound.src = "assets/audio/birds-chirping.mp3";
+        break;
+      case "cloudy":
+        sound.src = "assets/audio/birds-chirping.mp3";
+        break;
+      case "stormy":
+        sound.src = "assets/audio/thunder.mp3";
+        break;
+      case "snowy":
+        sound.src = "assets/audio/thunder.mp3";
+        break;
+      default:
+        console.error(`Error; No sound has been assigned to ${weatherType}`);
+        return;
+    }
+    sound.play();
+  }
 }
 
 /*
@@ -51,6 +92,7 @@ document.addEventListener("DOMContentLoaded", function () {
       let chosenSnippet =
         "Awaiting snippet of information relating to weather.";
       chosenSnippet = getChosenSnippet(htmlOfClickedCard, snippets);
+
       let secondView = `
         <!-- Exit icon -->
         <section class="cross-icon-container row">
@@ -91,8 +133,8 @@ document.addEventListener("DOMContentLoaded", function () {
               class="info-boxes audio-message-container row d-flex align-items-center justify-content-center"
             >
               <i class="fa-solid fa-volume-high col-12 align-self-end animate-click" data-play-sound></i>
-              <p class="col-12">
-                Click icon above to hear sounds of when it is (weather type)
+              <p class="col-12" data-sound-text>
+                Click icon above to hear sounds of when it is (weatherType)
               </p>
             </div>
           </div>
@@ -128,7 +170,6 @@ document.addEventListener("DOMContentLoaded", function () {
           <!-- /Learn more button -->
         </section>
       `;
-
       let averagedWeatherDetails;
 
       switch (clickedCard) {
@@ -156,6 +197,16 @@ document.addEventListener("DOMContentLoaded", function () {
       }
       changeContent(secondView);
       setWeatherDetails(averagedWeatherDetails);
+
+      /* 
+      This click event executes the playSound function when the sound icon is clicked
+      The correct sound to play with be determined by weatherType */
+      document.addEventListener("click", function (event) {
+        if (event.target.matches("[data-play-sound]")) {
+          let weatherType = averagedWeatherDetails.weatherType;
+          playSound(weatherType);
+        }
+      });
 
       /*
       This click event generates a new random snippet from the snippets object when the learn more button is clicked. 
