@@ -1,7 +1,7 @@
 import {
   currentPeriodAveragesGlobal,
   periodsOfTheDayAveragesGlobal,
-} from "./weatherData.js";
+} from "./weather-data.js";
 import { getChosenSnippet } from "./snippet.js";
 
 /*
@@ -22,7 +22,9 @@ function setWeatherDetails(averagedWeatherDetails) {
       <li>Humidity = ${averagedWeatherDetails.humidityHourly}</li>
     </ul> 
   `;
+  console.log(averagedWeatherDetails);
 }
+
 /*
 This event listener:
 1) Waits for DOM content to fully load before accessing the class and data attribute that are needed and storing them as variables
@@ -88,7 +90,7 @@ document.addEventListener("DOMContentLoaded", function () {
             <div
               class="info-boxes audio-message-container row d-flex align-items-center justify-content-center"
             >
-              <i class="fa-solid fa-volume-high col-12 align-self-end animate-click"></i>
+              <i class="fa-solid fa-volume-high col-12 align-self-end animate-click" data-play-sound></i>
               <p class="col-12">
                 Click icon above to hear sounds of when it is (weather type)
               </p>

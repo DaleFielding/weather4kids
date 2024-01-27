@@ -1,5 +1,5 @@
 import { convertSecondsToHourly, calculateAverages } from "./math.js";
-import { setWeatherCards } from "./weatherCards.js";
+import { setWeatherCards } from "./weather-cards.js";
 // const fetch = require('node-fetch'); // commented out as this stops it working in browser console.
 const baseUrl = "https://api.weatherapi.com/v1";
 const apiKey = "211d38f5813f4f90bfa70515240501";

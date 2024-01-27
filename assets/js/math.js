@@ -91,5 +91,3 @@ export function calculateAverages(array) {
 
   return arrayAveraged;
 }
-
-// REMINDER. Will need to add if night and sunny - make cloudy
