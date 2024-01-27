@@ -61,8 +61,15 @@
               type="search"
               id="search"
               placeholder=" Search location is coming soon"
+              autocomplete="off"
             />
-            <span class="search-icon input-group-text grey-button">
+            <span
+              class="search-icon input-group-text grey-button"
+              data-bs-toggle="tooltip"
+              data-bs-placement="bottom"
+              data-bs-custom-class="custom-tooltip"
+              data-bs-title=" Search location is coming soon"
+            >
               <i
                 class="fa-solid fa-magnifying-glass"
                 style="font-size: 40px"
@@ -238,6 +245,7 @@
     ></script>
     <script src="assets/js/weather-data.js" type="module"></script>
     <script src="assets/js/weather-cards.js" type="module"></script>
+    <script src="assets/js/tooltip.js" type="module"></script>
     <script src="assets/js/slider.js" type="module"></script>
     <script src="assets/js/second-view.js" type="module"></script>
   </body>
