@@ -118,6 +118,13 @@ header {
   font-family: var(--cabin-font);
 }
 
+.custom-tooltip {
+  font-family: var(--snigglet-font);
+  --bs-tooltip-bg: var(--my-crimson);
+  --bs-tooltip-color: white;
+  
+}
+
 /* ----- MAIN ----- */
 
 .container-fluid {
