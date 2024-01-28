@@ -103,7 +103,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const myForm = document.getElementById("my-form");
     const errorId = document.querySelector("[data-validation-errors]");
 
-    myForm.addEventListener("submit", (e) => {
+    myForm.addEventListener("submit", function (e) {
       let errorMessages = [];
       if (name.value.length <= 1) {
         errorMessages.push("name must have more than character");
