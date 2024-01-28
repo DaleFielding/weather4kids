@@ -1,8 +1,8 @@
-/** 
+/**
 setWeatherCards:
-1) Obtains the values from periodsOfTheDayAverages by object destructuring
-2) Query selects the image src of the appropriate data-card attribute
-3) modifys the src element with the appropriate values from periodsOfTheDayAverages
+1) Obtains the values from periodsOfTheDayAverages by object destructuring.
+2) Query selects the image src of the appropriate data-card attribute.
+3) modifys the src element with the appropriate values from periodsOfTheDayAverages.
 **/
 export function setWeatherCards(periodsOfTheDayAverages) {
   let {
