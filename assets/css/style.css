@@ -61,7 +61,6 @@ body {
 }
 
 .light-blue-button {
-  /* background-color: white; */
   border: solid 3px var(--my-blue-border);
   color: var(--my-blue)
 }
@@ -330,4 +329,16 @@ form {
   .cross-icon-container {
     margin: -22px;
   }
+}
+
+@media (min-width: 360px) {
+  .today-buttons {
+    font-size: 14px; 
+  }
+}
+
+@media(max-width: 320px){ 
+   .buttons-and-click-message-container h4 {
+    font-size: 18px;
+   }
 }
