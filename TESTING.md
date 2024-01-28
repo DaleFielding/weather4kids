@@ -30,10 +30,18 @@ Now no errors appear.
 * One alert due to a heading level being skipped (from h2 to h4). This is referring to the click to learn message as I did have this as a h4, however realising that it isn’t a header I have changed it to a paragraph and modified the text size.
 * One alert due to the click to learn message appearing as a heading, however this is not a heading so I have not made any changes with this.
 
+##### Results after changes made: 
+
+![Wave results index ](docs\readme-images\wave-results-index.png)
+
 #### 404 page:
 * One contrast error showing due to the same h1 as mentioned above.
 * One alert to say the text “Click to go to the Homepage” on a link is suspicious text. Amended to “Go to Homepage” 
 * One alert stating that link to index page is redundant as adjacent links go to the same url. However the only link that goes to the same url is the small logo at the very top left; I wouldn't say that was adjacent and the button is appropriate. I haven’t made any adjustments to this.
+
+##### Results after changes made: 
+
+![Wave results 404](docs\readme-images\wave-results-404.png)
 
 ### JSLint
 All of my JavaScript for this project has been put through JSLint.
