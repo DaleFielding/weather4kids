@@ -285,3 +285,11 @@ Cloning the repository is possible by following these steps:
 * [TinyPng](https://tinypng.com/) 
     * Was use to reduce the pdf size of the images.
 
+## Code
+
+### Templates 
+*  [Bootstrap Library](https://getbootstrap.com/docs/5.3/getting-started/introduction/ "link to Bootstrap Docs"):
+    * Has been used through the project to assist with making the pages responsive. 
+    * I have used some template code from Bootstrap documentation, such as the form.
+    * I have made amendments to these in order to suit the chosen design for the website.
+
