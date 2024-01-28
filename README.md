@@ -250,3 +250,38 @@ Cloning the repository is possible by following these steps:
 5. Change the current working directory to the one where you want the cloned directory.
 6. Type git clone and paste the URL from the clipboard ```$ git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY```
 7.Press Enter to create your local clone.
+
+## Technologies Used
+
+### Languages Used
+
+-   [HTML5](https://en.wikipedia.org/wiki/HTML5)
+-   [CSS3](https://en.wikipedia.org/wiki/Cascading_Style_Sheets)
+-   [JavaScript](https://en.wikipedia.org/wiki/JavaScript)
+-   [JQuery](https://en.wikipedia.org/wiki/JQuery)
+
+### Frameworks, Libraries & Programs Used
+
+* [Bootstrap 5.3.2:](https://getbootstrap.com/docs/5.3/getting-started/introduction/)
+    - Bootstrap was used to assist with the responsiveness of all pages.
+* [Font Awesome:](https://fontawesome.com/)
+    - Font Awesome was used on the social media links in the footer, the smiley emoji in the form and the magnifying glass in the header.
+* [Google Fonts:](https://fonts.google.com/)
+    - Google fonts were used to import the chosen fonts that were used throughout the webpages.    
+* [Git](https://git-scm.com/)
+    - Git was used for version control to commit to Git and Push to GitHub.
+* [GitHub:](https://github.com/)
+    - GitHub is used to store the project’s code after being pushed from Git.
+* [Visual Studio Code](https://code.visualstudio.com/)
+    - Visual Studio Code was used as the IDE for the project.
+* [Figma](https://www.figma.com/login?is_not_gen_0=true) 
+    - Figma was used to complete further wireframes for mobile, tablet and desktop pages.
+* [Photoshop:](https://www.adobe.com/ie/products/photoshop.html)
+    - Photoshop was used to adjust image sizes, improve resolution, and combine images.
+* [Shutterstock](https://www.shutterstock.com/)
+    - Shutterstock Was used to obtain the images for the weather cars
+* [Free Logo Design](https://www.freelogodesign.org/) 
+    * Free Logo Design was used to create the logo.
+* [TinyPng](https://tinypng.com/) 
+    * Was use to reduce the pdf size of the images.
+
