@@ -1,19 +1,23 @@
+// import statements
 import { convertSecondsToHourly, calculateAverages } from "./math.js";
 import { setWeatherCards } from "./weather-cards.js";
-// const fetch = require('node-fetch'); // commented out as this stops it working in browser console.
+
+// baseUrl, api key and initial declaration of location name
 const baseUrl = "https://api.weatherapi.com/v1";
 const apiKey = "211d38f5813f4f90bfa70515240501";
-let locationName = "Bath";
+let locationName = "";
 
-// Export the below variable (which will be an object containing data) so that the its value can be accessed from other files without having to call getWeatherData again.
+// Export the below variables (which will be an objects containing data) so that the values can be accessed from other files without having to call getWeatherData again.
 export let currentPeriodAveragesGlobal;
 export let periodsOfTheDayAveragesGlobal;
 
-/** getWeatherData() function:
-- Fetch the weather data
-- destructure data into variables if fetch succesfull
-- throw an error if there's an issue with the response 
-- catch the error and display it in the console
+/** 
+getWeatherData() function:
+1) Fetch the weather data
+2) Destructure data into variables if fetch succesfull
+3) Throw an error if there's an issue with the response 
+4) Catch the error and display it in the console
+5) Call the setIntroMsg and setWeatherCards functions passing in the appropriate parameters
 **/
 function getWeatherData() {
   let url = `${baseUrl}/forecast.json?key=${apiKey}&q=${locationName}&days=1&current.json?key=${apiKey}&q=${locationName}`;
@@ -113,10 +117,11 @@ function getWeatherData() {
 }
 
 /** 
-- Determine current time based on the location, 
-- Calculate current time period of the day based on this 
-- Then create a new object containing info from the appropriate object (morningAverages etc; see above)
-- return the object to be accessed outside of the function.
+calculateCurrentPeriod function:
+1) Determine current time based on the location, 
+2) Calculate current time period of the day based on this 
+3) Then create a new object containing info from the appropriate object (morningAverages etc; see above)
+4) Return the object to be accessed outside of the function.
 **/
 function calculateCurrentPeriod(
   localTime,
@@ -150,10 +155,10 @@ function calculateCurrentPeriod(
 }
 
 /**
-  setIntroMsg:
-  - Pass the found location as a parameter, which indicates location access has been allowed. 
-  - Pass the currentPeriodAverages object as the second parameter, allowing access to the weather data.
-  - Update html for the intro message and display the desired data passed from the parameters.
+  setIntroMsg function:
+  1) Pass the found location as a parameter, which indicates location access has been allowed. 
+  2) Pass the currentPeriodAverages object as the second parameter, allowing access to the weather data.
+  3) Update html for the intro message and display the desired data passed from the parameters.
   **/
 function setIntroMsg(foundLocation, currentPeriodAverages, currentPeriod) {
   let mainIntro = document.querySelector("[data-main-intro]");
@@ -170,12 +175,12 @@ function setIntroMsg(foundLocation, currentPeriodAverages, currentPeriod) {
 }
 
 /**  
-getLocation:
-- Get the user location coordinates
-- Fetch to reverse geocode in order to obtain the city/area from data.location.name 
-- Update the locationName variable. 
-- Call the setIntroMsg function passing in the found location as a parameter
-- Catch any errors if unable to get location and set default location so app will stil lbe functional without location access.
+getLocation function:
+1) Get the user location coordinates
+2) Fetch to reverse geocode in order to obtain the city/area from data.location.name 
+3) Update the locationName variable. 
+4) Call the setIntroMsg function passing in the found location as a parameter
+5) Catch any errors if unable to get location and set default location so app will stil lbe functional without location access.
 **/
 function getLocation() {
   const successCallback = (position) => {
@@ -196,7 +201,7 @@ function getLocation() {
 
   const errorCallback = (error) => {
     console.error("Error:", error);
-    locationName = "London"; //default location if error/location denied.
+    locationName = "London";
     getWeatherData(locationName);
   };
   navigator.geolocation.getCurrentPosition(successCallback, errorCallback);

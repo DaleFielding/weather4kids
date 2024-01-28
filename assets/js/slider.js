@@ -1,5 +1,10 @@
-// Reminder - I need to remember to add comments, and tidy up my code.
-
+/*
+This event listener:
+1) Waits for DOM content to fully load before accessing the data attributes that are needed and storing them as variables.
+2) Adds click events for the earlier and later today buttons
+ 2a) Uses node properties such as newElementSibling to access the appropriate card depending on location
+ 2b) Uses if statements to adjust the bootstrap classes/visibility of each weather card as desired (a sort of slider effect)
+*/
 document.addEventListener("DOMContentLoaded", function () {
   const laterButton = document.querySelector("[data-later-button]");
   const earlierButton = document.querySelector("[data-earlier-button]");

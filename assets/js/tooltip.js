@@ -1,3 +1,4 @@
+// Bootstrap required setup for tooltips:
 const tooltipTriggerList = document.querySelectorAll(
   '[data-bs-toggle="tooltip"]'
 );
