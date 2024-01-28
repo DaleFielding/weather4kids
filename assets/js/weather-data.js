@@ -1,8 +1,8 @@
-// import statements
+// import statements.
 import { convertSecondsToHourly, calculateAverages } from "./math.js";
 import { setWeatherCards } from "./weather-cards.js";
 
-// baseUrl, api key and initial declaration of location name
+// baseUrl, api key and initial declaration of location name.
 const baseUrl = "https://api.weatherapi.com/v1";
 const apiKey = "211d38f5813f4f90bfa70515240501";
 let locationName = "";
@@ -11,26 +11,26 @@ let locationName = "";
 export let currentPeriodAveragesGlobal;
 export let periodsOfTheDayAveragesGlobal;
 
-/** 
+/**
 getWeatherData() function:
-1) Fetch the weather data
-2) Destructure data into variables if fetch succesfull
-3) Throw an error if there's an issue with the response 
-4) Catch the error and display it in the console
-5) Call the setIntroMsg and setWeatherCards functions passing in the appropriate parameters
+1) Fetch the weather data.
+2) Destructure data into variables if fetch succesfull.
+3) Throw an error if there's an issue with the response .
+4) Catch the error and display it in the console.
+5) Call the setIntroMsg and setWeatherCards functions passing in the appropriate parameters.
 **/
 function getWeatherData() {
   let url = `${baseUrl}/forecast.json?key=${apiKey}&q=${locationName}&days=1&current.json?key=${apiKey}&q=${locationName}`;
 
   fetch(url)
-    .then((response) => {
+    .then(function (response) {
       if (!response.ok) {
         throw new Error(`HTTP error! Status: ${response.status}`);
       }
       return response.json();
     })
-    .then((data) => {
-      let { current, location, forecast } = data;
+    .then(function (data) {
+      let { current, forecast, location } = data;
 
       let {
         condition: weatherType,
@@ -64,7 +64,7 @@ function getWeatherData() {
         weatherCode: entry.condition.code,
       }));
 
-      /* Slice hourlyWeatherArray into separate arrays for the different periods of the day. 
+      /* Slice hourlyWeatherArray into separate arrays for the different periods of the day.
       The index of hourlyWeatherArray runs from 0-23 which represents each hour of the day; 0 = 12am, 1 = 1am etc. */
       const stillNight = hourlyWeatherArray.slice(0, 5);
       const morning = hourlyWeatherArray.slice(5, 12);
@@ -116,11 +116,11 @@ function getWeatherData() {
     });
 }
 
-/** 
+/**
 calculateCurrentPeriod function:
-1) Determine current time based on the location, 
-2) Calculate current time period of the day based on this 
-3) Then create a new object containing info from the appropriate object (morningAverages etc; see above)
+1) Determine current time based on the location.
+2) Calculate current time period of the day based on this.
+3) Then create a new object containing info from the appropriate object (morningAverages etc; see above).
 4) Return the object to be accessed outside of the function.
 **/
 function calculateCurrentPeriod(
@@ -156,7 +156,7 @@ function calculateCurrentPeriod(
 
 /**
   setIntroMsg function:
-  1) Pass the found location as a parameter, which indicates location access has been allowed. 
+  1) Pass the found location as a parameter, which indicates location access has been allowed.
   2) Pass the currentPeriodAverages object as the second parameter, allowing access to the weather data.
   3) Update html for the intro message and display the desired data passed from the parameters.
   **/
@@ -174,12 +174,12 @@ function setIntroMsg(foundLocation, currentPeriodAverages, currentPeriod) {
   `;
 }
 
-/**  
+/**
 getLocation function:
-1) Get the user location coordinates
-2) Fetch to reverse geocode in order to obtain the city/area from data.location.name 
-3) Update the locationName variable. 
-4) Call the setIntroMsg function passing in the found location as a parameter
+1) Get the user location coordinates.
+2) Fetch to reverse geocode in order to obtain the city/area from data.location.name
+3) Update the locationName variable.
+4) Call the setIntroMsg function passing in the found location as a parameter.
 5) Catch any errors if unable to get location and set default location so app will stil lbe functional without location access.
 **/
 function getLocation() {
@@ -189,8 +189,10 @@ function getLocation() {
     fetch(
       `https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${latitude},${longitude}`
     )
-      .then((response) => response.json())
-      .then((data) => {
+      .then(function (response) {
+        return response.json();
+      })
+      .then(function (data) {
         locationName = data.location.name;
         getWeatherData(locationName);
       })
