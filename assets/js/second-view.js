@@ -6,12 +6,12 @@ import { getChosenSnippet } from "./snippet.js";
 
 /*
 setWeatherDetails:
-1) Takes averagedWeatherDetails as a parameter
-2) Accesses the data attributes of the weatherDetails section and the soundText section then stores as a variable to be used with JS
-3) Changes the inner HTML of weather details 
-   3a) A list is created for specific weather details
+1) Takes averagedWeatherDetails as a parameter.
+2) Accesses the data attributes of the weatherDetails section and the soundText section then stores as a variable to be used with JS.
+3) Changes the inner HTML of weather details.
+   3a) A list is created for specific weather details.
    3b) Dynamic values are taken from averagedWeatherDetails to be displayed in the lists.
-3) Changes the inner HTML of soundText adding dynamic value for the weatherType
+3) Changes the inner HTML of soundText adding dynamic value for the weatherType.
 */
 function setWeatherDetails(averagedWeatherDetails) {
   let weatherDetails = document.querySelector("[data-weather-details]");
@@ -32,7 +32,7 @@ let sound = new Audio();
 /** 
 playSound function:
 1) Checks if sound is playing and if so pauses the sound then resets current time.
-2) If sound is not playing it will execute a switch statement to determine the appropriate sound to be assigned
+2) If sound is not playing it will execute a switch statement to determine the appropriate sound to be assigned.
 3) It will then play sound.
  **/
 function playSound(weatherType) {
@@ -69,14 +69,14 @@ function playSound(weatherType) {
 
 /*
 This event listener:
-1) Waits for DOM content to fully load before accessing the class and data attribute that are needed and storing them as variables
-2) Defines a function changeContent that allows the inner html of the main section content to be changed 
-3) Loops over each weather card to add click event listeners for each card
-  3a) When executed the value of the data attribute is accessed and stored in the variable clickedCard
-  3b) intended new content is declared under the variable secondView
+1) Waits for DOM content to fully load before accessing the class and data attribute that are needed and storing them as variables.
+2) Defines a function changeContent that allows the inner html of the main section content to be changed.
+3) Loops over each weather card to add click event listeners for each card.
+  3a) When executed the value of the data attribute is accessed and stored in the variable clickedCard.
+  3b) intended new content is declared under the variable secondView.
   3c) switch statement checks which card was clicked and stores the correct weather details into a variable called averagedWeatherDetails.
 4) changeContent function is called with secondView string passed in.
-5) setWeatherDetails is called with averagedWeatherDetails passed in. 
+5) setWeatherDetails is called with averagedWeatherDetails passed in.
 */
 document.addEventListener("DOMContentLoaded", function () {
   let weatherCards = document.querySelectorAll(".weather-cards");
@@ -199,9 +199,10 @@ document.addEventListener("DOMContentLoaded", function () {
       changeContent(secondView);
       setWeatherDetails(averagedWeatherDetails);
 
-      /* 
+      /*
       This click event executes the playSound function when the sound icon is clicked
-      The correct sound to play with be determined by weatherType */
+      The correct sound to play with be determined by weatherType.
+      */
       document.addEventListener("click", function (event) {
         if (event.target.matches("[data-play-sound]")) {
           let weatherType = averagedWeatherDetails.weatherType;
@@ -211,7 +212,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
       /*
       This click event generates a new random snippet from the snippets object when the learn more button is clicked. 
-      It then replaces the text content in the snippetContainer   */
+      It then replaces the text content in the snippetContainer.
+      */
       document.addEventListener("click", function (event) {
         if (event.target.matches("[data-learn-more-btn]")) {
           let snippetContainer = document.querySelector("[data-snippet]");
