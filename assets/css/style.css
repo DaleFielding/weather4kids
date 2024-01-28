@@ -153,8 +153,9 @@ header {
 .buttons-and-click-message-container {
   padding-top: 10px;
 }
-
-
+.buttons-and-click-message-container p {
+  font-size: 22px;
+}
 /* Click to learn arrow/message */
 
 .learn-arrow-container {
@@ -337,7 +338,7 @@ form {
 }
 
 @media(max-width: 320px){ 
-  .buttons-and-click-message-container h4 {
+  .buttons-and-click-message-container p {
    font-size: 18px;
   }
 }
