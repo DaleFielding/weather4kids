@@ -20,8 +20,9 @@ body {
   --my-yellow-border: #ffcd61;
   --my-crimson: #c11a36;
   --my-crimson-border: #d42845;
-  --my-blue: #1183f4;
-  --my-blue-border: #349affbd;
+  --my-blue: #0857A6;
+  --my-blue-border: #1c6ec0;
+  --my-blue-border-faded: #1c6ec0a6;
   --my-light-blue: #93ddf0;
   --my-grey: #e8e8e8;
   --my-grey-border: #cfcfcf;
@@ -61,7 +62,7 @@ body {
 }
 
 .light-blue-button {
-  border: solid 3px var(--my-blue-border);
+  border: solid 3px var(--my-blue-border-faded);
   color: var(--my-blue)
 }
 
@@ -203,6 +204,7 @@ footer p {
 
 .social-container ul {
   margin: 0;
+  color: var(--my-blue);
 }
 
 
@@ -213,6 +215,7 @@ footer p {
 
 .social-container a {
   text-decoration: none;
+  color: var(--my-blue);
 }
 
 .list-inline-item:not(:last-child) {
