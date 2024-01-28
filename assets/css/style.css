@@ -189,6 +189,14 @@ footer p {
   padding: 2rem 0;
 }
 
+.weather-api-link-back {
+  font-size: 12px;
+}
+
+.weather-api-link-back a {
+  text-decoration: none;
+  color: var(--my-blue);
+}
 
 .social-container {
   margin: auto;
