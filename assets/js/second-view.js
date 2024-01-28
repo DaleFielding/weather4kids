@@ -49,6 +49,9 @@ function playSound(weatherType) {
       case "sunny":
         sound.src = "assets/audio/birds-chirping.mp3";
         break;
+      case "cloudy-but-sunny":
+        sound.src = "assets/audio/birds-chirping.mp3";
+        break;
       case "cloudy":
         sound.src = "assets/audio/birds-chirping.mp3";
         break;
