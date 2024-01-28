@@ -152,3 +152,23 @@ The site will be designed largely as a single page layout, with the majority of 
   <details><summary>404 page</summary>
     <img src="docs/wireframes/desktop-view-404.png">
   </details>
+<br>
+
+>Note; the decision was made to slightly alter the design during developement. Some of the wording has been altered, and it was decided to not include a triangular shaped button.
+
+### Surface
+#### Habits and conventions:
+Users will navigate through the site by scrolling down the pages, through clicking on the various buttons and interactive elements within the site.
+
+#### Typography
+I have chosen a combination of Sniglet and Cabin for the website, as I feel these suit the target audience, complement each other nicely, are clear and readable.
+
+#### Colour Scheme:
+
+* I have chosen to go for what I would consider a colourblind safe palette.
+* I had initially gone for a lighter blue as the main colour for the site as I felt this was very vibrant and engaging. However following validation this didn’t meet the contrast standards so the main blue was made darker to meet these standards.
+* The chosen colour scheme meets the Web Content Accessibility Guidelines for readability.
+
+![Colour palette](docs/readme-images/colour-palette.png)
+
+
