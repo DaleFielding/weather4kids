@@ -191,6 +191,27 @@ Form - Return To Homepage Test:
 * Expected: Redirects to the home page.
 * Result: Pass.
 
+## Other Testing
+Google Developer tools:
+* I have continuously tested and played around with many different resolutions throughout developement, to ensure there is no unexpected behaviour.
+
+Testing on other browsers:
+* Google Chrome.
+* Microsoft Edge.
+* Firefox.
+* Safari (didn't work as intended)
+
+Devices:
+* Google Pixel.
+* Samsung S10.
+* Ipad
+* Dell Inspiron (Windows 11).
+
+Other users:
+* My friend Aaron Smyth has tested the site on his Apple laptop in the Safari browser (didn't work as intended)
+* My partner Laura Gibbons has tested the site herself on different browsers on her Google Pixel.
+
+
 ## Bugs 
 Search bar position:
 * Bug = Search bar unintentionally moving above the search icon between resolution width 768px-774px.
