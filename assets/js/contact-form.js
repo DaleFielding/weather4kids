@@ -110,7 +110,7 @@ document.addEventListener("DOMContentLoaded", function () {
     myForm.addEventListener("submit", function (e) {
       let errorMessages = [];
       if (name.value.length <= 1) {
-        errorMessages.push("name must have more than character");
+        errorMessages.push("name must have more than 1 character");
       }
       if (email.value.length <= 3) {
         errorMessages.push("email must have more than 3 characters");
