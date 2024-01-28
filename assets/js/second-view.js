@@ -26,7 +26,6 @@ function setWeatherDetails(averagedWeatherDetails) {
     </ul> 
   `;
   soundText.innerHTML = `Click icon above to hear sounds of when it is ${weatherType}`;
-  console.log(averagedWeatherDetails);
 }
 
 let sound = new Audio();
@@ -41,7 +40,6 @@ function playSound(weatherType) {
     sound.pause();
     sound.currentTime = 0;
   } else {
-    console.log(weatherType);
     switch (weatherType) {
       case "rainy":
         sound.src = "assets/audio/heavy-rain.mp3";
@@ -196,7 +194,7 @@ document.addEventListener("DOMContentLoaded", function () {
           averagedWeatherDetails = periodsOfTheDayAveragesGlobal.nightAverages;
           break;
         default:
-          console.log(`Error, with clickedCard: ${clickedCard}`);
+          console.error(`Error, with clickedCard: ${clickedCard}`);
       }
       changeContent(secondView);
       setWeatherDetails(averagedWeatherDetails);
@@ -222,7 +220,6 @@ document.addEventListener("DOMContentLoaded", function () {
           if (snippetContainer.querySelector("p")) {
             snippetContainer.querySelector("p").textContent = newRandomSnippet;
           }
-          console.log("Clicked Learn More");
         }
       });
     });
