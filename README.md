@@ -1,7 +1,7 @@
 # Weather 4 Kids
 The purpose of this project is to create a website that assists young children with learning about the weather. The site will be intended to be interactive, fun, engaging and provide information in a way that is easier for younger children to understand.
 
-[View the live project here](https://dalefielding.github.io/weather4kids/) <em> ...Currently In Development</em>
+[View the live project here](https://dalefielding.github.io/weather4kids/)
 
 ## User Experience (UX)
 
@@ -170,5 +170,52 @@ I have chosen a combination of Sniglet and Cabin for the website, as I feel thes
 * The chosen colour scheme meets the Web Content Accessibility Guidelines for readability.
 
 ![Colour palette](docs/readme-images/colour-palette.png)
+
+## Features 
+### General
+* Responsive on all device sizes.
+* Meta descriptions included to improve SEO.
+* Semantic elements, alt attributes and sr attributes to assist with accessibility/screen readers.
+
+### Site Header
+* Includes the Logo, which directs to the home page when clicked.
+* Site name is displayed as the main heading.
+* Search icon and search bar is displayed next to the search icon, this is hidden is screen width is less than 768px.<br>
+Note, as the search function is currently not functional, a tooltip and a placeholder has been added to let users know that the search location function is coming soon.
+
+### Site Main Content
+* Introductory message. This changes dynamically depending on whether location access has been allowed or if it hasn’t been allowed. It includes the user's location or a default location, it also displays the current temperature for that location.
+
+* Weather cards. Three weather cards are displayed next to each other inline on the page with the middle one enlarged. 
+  * These display the current periods of the day.
+  * Show images that are appropriate to the weather for that period of the day; before morning, morning, afternoon, evening and night. 
+
+* Earlier today and later today buttons. These are directional buttons and include icons (arrows) that indicate which direction. <br>
+When clicked, the position of the weather cards is altered from left to right as a kind of slider effect. <br>
+The before morning and night cards are not on display initially but will appear on display when appropriate.
+
+* Arrow and 'click to learn' message directs the user to click on the weather cards. When the weather cards are clicked this will change the main content on the page to what I call '**second view**'.
+
+* Second view. 
+  * Includes the clicked weather card.
+  * Contains a box that displays a sound icon and a message to click sound icon. When clicked a sound will play that is appropriate to that type of weather.<br>
+  Note, this currently has only three sounds currently available; birds chirping, thunder sound, and rain. The intention is to develop this further in the future. 
+  * Contains a box that displays snippets of information, this will be tailored to the specific weather type initially.
+  * The Learn more button when clicked with randomly select a new snippet of information in the snippet box.
+  * There are two ways to exit out of ‘second view’, by clicking the go back button or by clicking the cross icon.
+
+### Site Footer
+* Contact / feedback button within. When clicked, this replaces the main content on the page with a form.
+  * This form has various sections to complete which are all required and there is some functionality that ensures invalid data is being handled intelligently.
+  * A submit button that when clicked will display any validation errors for the user to be aware of. If no validation errors a message will be displayed to thank the user for contacting us, this includes a smiley emoji.
+  * There are two ways to exit out of the form view, by clicking the go back button or by clicking the cross icon.
+* Credit to the weatherapi, which includes link to their external page
+* Icons for social media; facebook, twitter and instagram. These include links to their external pages.
+
+### 404 page
+* Contains the same heading and footer as the main page.
+* An introductory message that lets the user know that they are trying to reach a page that doesn't exist.
+Includes a large logo in the centre of the page, but with a sad fact instead if a smiley face.
+There is a button that allows them to go to the home page when clicked.
 
 
