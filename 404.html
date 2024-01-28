@@ -34,7 +34,7 @@
   </head>
 
   <body>
-    <header class="container-fluid">
+    <header class="container-fluid" aria-label="Site Header">
       <div class="row align-items-end">
         <!-- Logo -->
         <div class="col-3 col-md-2 p-1 animate-click">
@@ -49,7 +49,9 @@
         <!-- /Logo -->
         <!-- Site Name -->
         <div class="col-6 site-name">
-          <h1 class="m-0">Weather 4 Kids</h1>
+          <h1 class="m-0" aria-label="Weather 4 Kids - Site Name">
+            Weather 4 Kids
+          </h1>
         </div>
         <!-- /Site Name -->
         <!-- Searchbar -->
@@ -62,18 +64,22 @@
               id="search"
               placeholder=" Search location is coming soon"
               autocomplete="off"
+              aria-label="Search input (Disabled)"
+              aria-hidden="true"
             />
             <span
               class="search-icon input-group-text grey-button"
               data-bs-toggle="tooltip"
               data-bs-placement="bottom"
               data-bs-custom-class="custom-tooltip"
-              data-bs-title=" Search location is coming soon"
+              data-bs-title="Search location is coming soon"
+              aria-label="Search icon (Disabled)"
             >
               <i
                 class="fa-solid fa-magnifying-glass"
                 style="font-size: 40px"
                 title="magnifying glass icon"
+                aria-hidden="true"
               ></i>
             </span>
           </div>
@@ -101,6 +107,7 @@
               src="assets/images/sad-logo.png"
               class="sad-logo"
               alt="site logo but with a sad face"
+              aria-hidden="true"
             />
           </div>
         </div>
@@ -121,13 +128,14 @@
       </section>
     </main>
 
-    <footer class="container-fluid">
+    <footer class="container-fluid" aria-label="Site Footer">
       <div class="footer-links-container row">
         <!-- Feedback Form -->
         <div class="col col-md-3 animate-click">
           <p
             class="single-line-button buttons light-blue-button animate-click"
             data-contact-button
+            aria-label="Contact or give feedback button"
           >
             Contact / Feedback
           </p>
@@ -142,6 +150,7 @@
               title="Free Weather API"
               class="animate-click"
               target="_blank"
+              aria-label="Powered by weatherapi.com"
               >WeatherAPI.com</a
             >
           </p>
@@ -154,7 +163,7 @@
               <a href="https://www.facebook.com/" target="_blank">
                 <i
                   class="fa fa-facebook"
-                  aria-hidden="true"
+                  aria-label="Facebook"
                   title="facebook logo"
                 ></i>
                 <span class="sr-only">Facebook</span>
@@ -166,7 +175,7 @@
                 target="_blank"
                 title="twitter logo"
               >
-                <i class="fa-brands fa-x-twitter" aria-hidden="true"></i>
+                <i class="fa-brands fa-x-twitter" aria-label="Twitter"></i>
                 <span class="sr-only">Twitter</span>
               </a>
             </li>
@@ -176,7 +185,7 @@
                 target="_blank"
                 title="instagram-logo"
               >
-                <i class="fa fa-instagram" aria-hidden="true"></i>
+                <i class="fa fa-instagram" aria-label="Instagram"></i>
                 <span class="sr-only">Instagram</span>
               </a>
             </li>

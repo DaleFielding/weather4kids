@@ -47,6 +47,7 @@ document.addEventListener("DOMContentLoaded", function () {
               class="form-control"
               id="name"
               placeholder="Enter your name here"
+              aria-label="Name"
               required
             />
           </div>
@@ -57,6 +58,7 @@ document.addEventListener("DOMContentLoaded", function () {
               class="form-control"
               id="email"
               placeholder="Enter your email address here"
+              aria-label="Email"
               required
             />
             <div class="mt-2 pb-4">
@@ -66,6 +68,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 id="message"
                 placeholder="Enter your message here"
                 rows="6"
+                aria-label="Message"
                 required
               ></textarea>
             </div>
@@ -87,6 +90,7 @@ document.addEventListener("DOMContentLoaded", function () {
               id="submit"
               type="submit"
               form="my-form"
+              aria-label="Submit Form"
             >
               <div>Submit</div>
             </button>

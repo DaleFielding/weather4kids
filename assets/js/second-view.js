@@ -133,7 +133,7 @@ document.addEventListener("DOMContentLoaded", function () {
             <div
               class="info-boxes audio-message-container row d-flex align-items-center justify-content-center"
             >
-              <i class="fa-solid fa-volume-high col-12 align-self-end animate-click" title="sound icon" data-play-sound></i>
+              <i class="fa-solid fa-volume-high col-12 align-self-end animate-click" title="sound icon" aria-label="Sound Icon" data-play-sound></i>
               <p class="col-12" data-sound-text>
                 Click icon above to hear sounds of when it is (weatherType)
               </p>
@@ -164,7 +164,7 @@ document.addEventListener("DOMContentLoaded", function () {
           <!--- /Go back button -->
           <!-- Learn more button -->
           <div class="col-4 col-md-3">
-            <div class="learn-more-btn buttons blue-button animate-click" data-learn-more-btn>
+            <div class="learn-more-btn buttons blue-button animate-click" aria-label="Learn More" data-learn-more-btn>
               Learn<br />More
             </div>
           </div>
