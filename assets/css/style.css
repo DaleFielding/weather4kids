@@ -100,8 +100,7 @@ header {
 
 .site-name h1 {
   color: var(--my-light-blue);
-  -webkit-text-stroke-width: 2px;
-  -webkit-text-stroke-color: var(--my-blue);
+  text-shadow: 0.000em 0.075em var(--my-blue), 0.029em 0.069em var(--my-blue), 0.053em 0.053em var(--my-blue), 0.069em 0.029em var(--my-blue), 0.075em 0.000em var(--my-blue), 0.069em -0.029em var(--my-blue), 0.053em -0.053em var(--my-blue), 0.029em -0.069em var(--my-blue), 0.000em -0.075em var(--my-blue), -0.029em -0.069em var(--my-blue), -0.053em -0.053em var(--my-blue), -0.069em -0.029em var(--my-blue), -0.075em -0.000em var(--my-blue), -0.069em 0.029em var(--my-blue), -0.053em 0.053em var(--my-blue), -0.029em 0.069em var(--my-blue);
 }
 
 .search-container input {
