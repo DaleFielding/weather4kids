@@ -229,3 +229,4 @@ There is a button that allows them to go to the home page when clicked.
 * Further sounds to be incorporated that are appropriate to the type of weather.
 * Further snippets of information to be added to provide a much bigger variety.
 * Other Weather APIs to be considered due to occasional inconsistencies with accuracy.
+* Safari browser functionality to work as intended. Currently not all elements are working as intended.

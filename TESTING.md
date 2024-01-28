@@ -190,3 +190,38 @@ Form - Return To Homepage Test:
 * Test: Click on the button to go to the home page.
 * Expected: Redirects to the home page.
 * Result: Pass.
+
+## Bugs 
+Search bar position:
+* Bug = Search bar unintentionally moving above the search icon between resolution width 768px-774px.
+* Resolution =
+I had checked the styles that had been applied in developer tools, however was unable to find any conflicting styles that have resulted in this. Fixed by reducing the text size by 2px.
+
+Display temperature dynamically in introduction message:
+  * Bug = message not displaying at all. This was because the value of variable currentPeriodAverages was outside of the required scope. 
+  * Resolution = Fixed this by declaring the needed variable in global scope and importing into the other file that it is needed in.
+
+Weatherapi functionality:
+* Bug = Was working on localhost but not on github pages.
+* Resolution = Fixed by changing fetched urls to https instead of http.
+
+Cross/exit icon position:
+* Bug = Unintended position of cross/exit icon in certain widths. 
+* Resolution = Fixed this by creating a media query at the appropriate breakpoint that adds a negative margin, this ensures that the icon remains where it is intended.
+
+Earlier today button responsiveness:
+* Bug = Unintended height of the button on some small device sizes due to words being pushed onto a new line. 
+* Resolution = Fixed this by creating a media query at the appropriate breakpoint that reduces the font size of the today buttons.
+
+Click to learn arrow responsiveness:
+* Bug = The arrow becomes miniscule on some small device sizes.
+* Resolution = Fixed this by creating a media query at the appropriate breakpoint that reduces the font size of click message; the message is in the came container and was taking up most of the space.
+
+## Unresolved Bugs:
+Weather API accuracy:
+* Bug = WeatherAPI picks up an inaccurate location on occasion. It will pick a nearby area instead of the actual location. 
+* Outcome = I had tried various techniques that I researched online to increase accuracy, owever I was not able to resolve the issue. <br>On further research I have determined that it may in fact be an issue with the actual API itself.
+
+Safari browser compatibility:
+* Bug = Despite working as intended on all other browsers, the site is not 100% functional on Safari. The search icon and search bar style is unusual and ‘second view’ is not generated after clicking any of the weather cards. 
+* Outcome = Will look to implement working functionality in the future.
