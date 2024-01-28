@@ -109,3 +109,84 @@ Homepage Mobile:
 ![lighthouse desktop 404 results](docs\readme-images\lighthouse-desktop-404.png)
 404 Page Mobile:
 ![lighthouse mobile 404 results](docs\readme-images\lighthouse-mobile-404.png)
+
+## Manual Testing 
+General Responsiveness Test:
+* Test: Throughout development and post development I have tested responsiveness by gradually decreasing and increasing the screen heights and widths (down to 320px) to see how the page elements respond. 
+* Expected: All elements on the page (header, main content, second view, footer + elements contained within them) adjust as expected and smoothly to different screen sizes and resolutions.
+* Result: Pass.
+
+Logo and Site Name Display Test:
+* Test: Click on the logo.
+* Expected: Redirects/reloads the home page.
+* Result: Pass.
+
+Search Bar Visibility Test:
+* Test: Reduce screen width to less than 768px to see if the search bar responds.
+* Expected: Search icon and bar should be hidden.
+* Result: Pass.
+
+Search Icon Tooltip Test:
+* Test: Hover/click the search icon to see if there is a response.
+* Expected: Tooltip should be displayed indicating ther search function coming soon.
+* Result: Pass.
+
+Introductory Message (Location Data) Test:
+* Test: Allow location access in browser
+* Expected: Displays the appropriate message including user's location and location's current temperature.
+* Result: Pass. 
+
+Introductory Message (Default Location Data) Test:
+* Test: Allow location access in browser
+* Expected: Displays the appropriate message including user's * location and location's current temperature.
+* Result: Pass.
+
+Weather Cards Slider Test:
+* Test: Click on the earlier today and later today buttons.
+* Expected: Weather cards slide left/right accordingly.
+* Result: Pass.
+
+Weather Card Click Test:
+* Test: Click on a weather card.
+* Expected: Switches main content to 'second view'.
+* Result: Pass.
+
+Second View - Sound Icon Test:
+* Test: Click on the sound icon.
+* Expected: Plays appropriate sound (birds chirping, thunder, or rain).
+* Result: Pass.
+
+Second View - Learn More Button Test:
+* Test: Click on the Learn More button.
+* Expected: Updates the snippet box with a new piece of information.
+* Result: Pass.
+
+Second View - Return To Homepage Test:
+* Test: Click on the go back button or cross icon.
+* Expected: Returns to the homepage layout.
+* Result:Pass.
+
+Contact/Feedback Button Test:
+* Test: Click on the Contact/Feedback button.
+* Expected: Replaces main content with the contact/feedback form.
+* Result: Pass
+
+Form - Validation Test:
+* Test: Submit the form with invalid data.
+* Expected: The relevant validation errors should be displayed for the user to see.
+* Result: Pass
+
+Form - Submission Test:
+* Test: Submit the form with valid data.
+* Expected: Submit button should disappear and in its place should be a thank you message with a smiley emoji.
+* Result: Pass.
+
+Form - Return To Homepage Test:
+* Test: Click on the go back button or cross icon.
+* Expected: Returns to the homepage layout.
+* Result: Pass. 
+
+404 Page - Redirect To Homepage Test:
+* Test: Click on the button to go to the home page.
+* Expected: Redirects to the home page.
+* Result: Pass.
