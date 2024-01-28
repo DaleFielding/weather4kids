@@ -97,3 +97,15 @@ Few warnings displayed.
 4. Unexpected let in reference to 2x exported global variables. Not clear why this would be a concern, there is little information about this online and as functionality works as intended for the site. I have not made any adjustments to this.
 5. Arrow functions used within functions, it was suggested that a function declaration be used instead, I have amended these.
 
+### Google Lighthouse:
+Files sizes of icon and weather cards have been reduced to improve performance.<br>
+
+#### Mobile results
+Homepage Desktop:
+![lighthouse desktop homepage results](docs\readme-images\lighthouse-desktop-homepage.png)
+Homepage Mobile:
+![lighthouse mobile homepage results](docs\readme-images\lighthouse-mobile-homepage.png)
+404 Page Desktop:
+![lighthouse desktop 404 results](docs\readme-images\lighthouse-desktop-404.png)
+404 Page Mobile:
+![lighthouse mobile 404 results](docs\readme-images\lighthouse-mobile-404.png)
