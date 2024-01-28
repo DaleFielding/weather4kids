@@ -10,9 +10,9 @@ The purpose of this project is to create a website that assists young children w
 2. As a user, I would like to view the details of the current weather. Such as precipitation, wind etc.
 3. As a user, I would like to see imagery relating to the type of weather.
 4. As a user, I would like to hear sounds appropriate to the type of weather.
-4. As a user, I would like to interact with elements in the site.
-5. As a user, I would like to learn about weather through snippets of information.
-6. As a user, I would like to provide feedback to the site owner/developer, and for this to be acknowledged.
+5. As a user, I would like to interact with elements in the site.
+6. As a user, I would like to learn about weather through snippets of information.
+7. As a user, I would like to provide feedback to the site owner/developer, and for this to be acknowledged.
 
 ### Site Objectives
 1. To assist young children (ages 4-7) with learning about the weather.
