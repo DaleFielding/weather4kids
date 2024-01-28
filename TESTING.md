@@ -191,6 +191,36 @@ Form - Return To Homepage Test:
 * Expected: Redirects to the home page.
 * Result: Pass.
 
+## Testing User Stories 
+As a user, I would like to view the current weather forecast for today in my location.<br>
+Result = pass:<br>
+![Current weather forecast for today in location displayed](docs\readme-images\user-story-current-location-weather-display.png)
+
+As a user, I would like to view the details of the current weather. Such as precipitation, wind etc.<br>
+Result = pass:<br>
+![weather details displayed](docs\readme-images\user-story-weather-details.png)
+
+
+As a user, I would like to see imagery relating to the type of weather.<br>
+Result = pass:<br>
+![weather imagery displayed](docs\readme-images\user-story-current-location-weather-display.png)
+
+As a user, I would like to hear sounds appropriate to the type of weather.<br>
+Result = pass (unable to evidence in screenshot):<br>
+![sound for type of weather icon displayed](docs\readme-images\user-story-sound-icon.png)
+
+As a user, I would like to interact with elements in the site.<br>
+Result = pass:(Highlighted in pink - not all showing on screen)<br>
+![Interactive Elements](docs\readme-images\user-story-interactive-elements.png)
+
+As a user, I would like to learn about weather through snippets of information.<br>
+Result = pass:<br>
+![snippets of information displayed](docs\readme-images\user-story-snippets.png)
+
+As a user, I would like to provide feedback to the site owner/developer, and for this to be acknowledged.<br>
+Result = pass:<br>
+![form functionality and feedback displayed](docs\readme-images\user-story-form-functionality.png)
+
 ## Other Testing
 Google Developer tools:
 * I have continuously tested and played around with many different resolutions throughout developement, to ensure there is no unexpected behaviour.
