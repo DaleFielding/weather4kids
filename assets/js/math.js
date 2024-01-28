@@ -33,7 +33,6 @@ function calculateMostCommon(weatherTypeCount) {
   let mostCommonTypes = Object.keys(weatherTypeCount).filter(
     (type) => weatherTypeCount[type] === maxCount
   );
-  // console.log(mostCommonTypes);
   let randomIndex = Math.floor(Math.random() * mostCommonTypes.length);
   let randomType = mostCommonTypes[randomIndex];
 

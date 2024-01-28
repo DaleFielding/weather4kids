@@ -195,7 +195,7 @@ function getLocation() {
   };
 
   const errorCallback = (error) => {
-    console.log(error);
+    console.error("Error:", error);
     locationName = "London"; //default location if error/location denied.
     getWeatherData(locationName);
   };

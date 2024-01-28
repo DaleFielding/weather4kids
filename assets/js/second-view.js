@@ -132,7 +132,7 @@ document.addEventListener("DOMContentLoaded", function () {
             <div
               class="info-boxes audio-message-container row d-flex align-items-center justify-content-center"
             >
-              <i class="fa-solid fa-volume-high col-12 align-self-end animate-click" data-play-sound></i>
+              <i class="fa-solid fa-volume-high col-12 align-self-end animate-click" title="sound icon" data-play-sound></i>
               <p class="col-12" data-sound-text>
                 Click icon above to hear sounds of when it is (weatherType)
               </p>

@@ -10,8 +10,6 @@ document.addEventListener("DOMContentLoaded", function () {
   const firstCard = cardContainer.firstElementChild;
 
   laterButton.addEventListener("click", function () {
-    console.log("later");
-
     const currentCard = document.querySelector("[data-cards]:not(.d-none)");
     const nextCard = currentCard.nextElementSibling;
     const nextNextCard = nextCard.nextElementSibling;
@@ -49,8 +47,6 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   earlierButton.addEventListener("click", function () {
-    console.log("earlier");
-
     const currentCard = document.querySelector("[data-cards]:not(.d-none)");
     const prevCard = currentCard.previousElementSibling;
     const prevPrevCard = prevCard.previousElementSibling;
