@@ -293,3 +293,11 @@ Cloning the repository is possible by following these steps:
     * I have used some template code from Bootstrap documentation, such as the form.
     * I have made amendments to these in order to suit the chosen design for the website.
 
+## Acknowledgements 
+* Mitko Bachvarov - My Code Institute Mentor for helpful feedback.
+
+* Adam Cross - Course Curriculum manager at Code Institute for their support during 121s in the absence of a tutor.
+
+* Laura Gibbons - My partner for her user feedback
+
+* Aaron Smyth - for his user feedback
