@@ -176,6 +176,7 @@ I have chosen a combination of Sniglet and Cabin for the website, as I feel thes
 * Responsive on all device sizes.
 * Meta descriptions included to improve SEO.
 * Semantic elements, alt attributes and sr attributes to assist with accessibility/screen readers.
+* Connected to a weather api (WeatherAPI.com) where data is fetched and displayed dynamically across the webpage.
 
 ### Site Header
 * Includes the Logo, which directs to the home page when clicked.
@@ -188,7 +189,8 @@ Note, as the search function is currently not functional, a tooltip and a placeh
 
 * Weather cards. Three weather cards are displayed next to each other inline on the page with the middle one enlarged. 
   * These display the current periods of the day.
-  * Show images that are appropriate to the weather for that period of the day; before morning, morning, afternoon, evening and night. 
+  * Show images that are appropriate to the weather for that period of the day; before morning, morning, afternoon, evening and night. <br>
+  Note, there is currently the potential that is will display a sunny icon when it is either before morning or night. The intention is to change this in the future.
 
 * Earlier today and later today buttons. These are directional buttons and include icons (arrows) that indicate which direction. <br>
 When clicked, the position of the weather cards is altered from left to right as a kind of slider effect. <br>
@@ -218,4 +220,12 @@ The before morning and night cards are not on display initially but will appear 
 Includes a large logo in the centre of the page, but with a sad fact instead if a smiley face.
 There is a button that allows them to go to the home page when clicked.
 
-
+## Future implementations:
+* Full functionality to be incorporated into the search bar/icon. Resulting in the ability to search for other cities around the world.
+  * While typing this will display suggestions in a drop down list that will appear below the search bar/icon. 
+  * When a city is selected the weather api will pull the data appropriate to that location and display the relevant data within the webpage.
+* Wider range of weather icons will be available for the cards so that it can display a more accurate picture to the type of weather. Some examples of this would be; heavy rain, light rain, sleet, windy, night time weather icons etc.
+* Smoother transition when moving weather cards directionally, including the ability to swipe when using a touch screen.
+* Further sounds to be incorporated that are appropriate to the type of weather.
+* Further snippets of information to be added to provide a much bigger variety.
+* Other Weather APIs to be considered due to occasional inconsistencies with accuracy.
