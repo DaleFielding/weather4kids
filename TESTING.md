@@ -32,7 +32,7 @@ Now no errors appear.
 
 ##### Results after changes made: 
 
-![Wave results index ](docs\readme-images\wave-results-index.png)
+![Wave results index ](docs/readme-images/wave-results-index.png)
 
 #### 404 page:
 * One contrast error showing due to the same h1 as mentioned above.
@@ -41,7 +41,7 @@ Now no errors appear.
 
 ##### Results after changes made: 
 
-![Wave results 404](docs\readme-images\wave-results-404.png)
+![Wave results 404](docs/readme-images/wave-results-404.png)
 
 ### JSLint
 All of my JavaScript for this project has been put through JSLint.
@@ -101,14 +101,14 @@ Few warnings displayed.
 Files sizes of icon and weather cards have been reduced to improve performance.<br>
 
 #### Mobile results
-Homepage Desktop:
-![lighthouse desktop homepage results](docs\readme-images\lighthouse-desktop-homepage.png)
-Homepage Mobile:
-![lighthouse mobile homepage results](docs\readme-images\lighthouse-mobile-homepage.png)
-404 Page Desktop:
-![lighthouse desktop 404 results](docs\readme-images\lighthouse-desktop-404.png)
-404 Page Mobile:
-![lighthouse mobile 404 results](docs\readme-images\lighthouse-mobile-404.png)
+* Homepage Desktop:<br>
+![lighthouse desktop homepage results](docs/readme-images/lighthouse-desktop-homepage.png)
+* Homepage Mobile:<br>
+![lighthouse mobile homepage results](docs/readme-images/lighthouse-mobile-homepage.png)
+* 404 Page Desktop:<br>
+![lighthouse desktop 404 results](docs/readme-images/lighthouse-desktop-404.png)
+* 404 Page Mobile:<br>
+![lighthouse mobile 404 results](docs/readme-images/lighthouse-mobile-404.png)
 
 ## Manual Testing 
 General Responsiveness Test:
@@ -194,32 +194,32 @@ Form - Return To Homepage Test:
 ## Testing User Stories 
 As a user, I would like to view the current weather forecast for today in my location.<br>
 Result = pass:<br>
-![Current weather forecast for today in location displayed](docs\readme-images\user-story-current-location-weather-display.png)
+![Current weather forecast for today in location displayed](docs/readme-images/user-story-current-location-weather-display.png)
 
 As a user, I would like to view the details of the current weather. Such as precipitation, wind etc.<br>
 Result = pass:<br>
-![weather details displayed](docs\readme-images\user-story-weather-details.png)
+![weather details displayed](docs/readme-images/user-story-weather-details.png)
 
 
 As a user, I would like to see imagery relating to the type of weather.<br>
 Result = pass:<br>
-![weather imagery displayed](docs\readme-images\user-story-current-location-weather-display.png)
+![weather imagery displayed](docs/readme-images/user-story-current-location-weather-display.png)
 
 As a user, I would like to hear sounds appropriate to the type of weather.<br>
 Result = pass (unable to evidence in screenshot):<br>
-![sound for type of weather icon displayed](docs\readme-images\user-story-sound-icon.png)
+![sound for type of weather icon displayed](docs/readme-images/user-story-sound-icon.png)
 
 As a user, I would like to interact with elements in the site.<br>
 Result = pass:(Highlighted in pink - not all showing on screen)<br>
-![Interactive Elements](docs\readme-images\user-story-interactive-elements.png)
+![Interactive Elements](docs/readme-images/user-story-interactive-elements.png)
 
 As a user, I would like to learn about weather through snippets of information.<br>
 Result = pass:<br>
-![snippets of information displayed](docs\readme-images\user-story-snippets.png)
+![snippets of information displayed](docs/readme-images/user-story-snippets.png)
 
 As a user, I would like to provide feedback to the site owner/developer, and for this to be acknowledged.<br>
 Result = pass:<br>
-![form functionality and feedback displayed](docs\readme-images\user-story-form-functionality.png)
+![form functionality and feedback displayed](docs/readme-images/user-story-form-functionality.png)
 
 ## Other Testing
 Google Developer tools:
